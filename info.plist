@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>0C89D8F9-ED8A-4CAC-9EA1-A9E6AED59A62</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>angular</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>coffeescript</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>css</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>d3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>dom</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>dom_events</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>git</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>html</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>http</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>jquery</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>jqueryui</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>js</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>lodash</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>php</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>sass</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>css</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Yannick Galatol</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>devdocs</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>doc</string>
+				<key>runningsubtext</key>
+				<string>Updating database...</string>
+				<key>script</key>
+				<string>$query = "{query}";
+require_once("devdocs.php");</string>
+				<key>title</key>
+				<string>Dev Docs</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0C89D8F9-ED8A-4CAC-9EA1-A9E6AED59A62</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>angular</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'angular';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for Angular "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - Angular.js</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>angular</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>coffeescript</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'coffeescript';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for CoffeeScript "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - CoffeeScript</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>coffeescript</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>css</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>d3</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'd3';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for D3 "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - D3.js</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>d3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>dom</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'dom';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for DOM "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - DOM</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>dom</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>domevents</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'dom_events';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for DOM Event "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - DOM Events</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>dom_events</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>git</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'git';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for Git "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - Git</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>git</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>html</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'html';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for HTML "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - HTML</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>html</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>http</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'http';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for HTTP "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - HTTP</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>http</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>js</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'js';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for JS "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - JavaScript</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>js</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>jquery</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'jquery';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for jQuery "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - jQuery</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>jquery</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>jqueryui</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'jqueryui';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for jQuery UI "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - jQuery UI</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>jqueryui</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>lodash</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'lodash';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for Lo-Dash "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - Lo-Dash</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>lodash</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>php</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'php';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for PHP "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - PHP</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>php</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>sass</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'sass';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for Sass "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - Sass</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>sass</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0C89D8F9-ED8A-4CAC-9EA1-A9E6AED59A62</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>11D5721D-E45C-4D45-82C8-2CC370002271</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>206763AD-3360-4820-97B1-97A81B79EAC6</key>
+		<dict>
+			<key>ypos</key>
+			<real>360</real>
+		</dict>
+		<key>2A397201-AB99-44EE-96A5-65D3AD99F2BB</key>
+		<dict>
+			<key>ypos</key>
+			<real>1140</real>
+		</dict>
+		<key>331216B4-9B70-4762-9B9D-D364BDDC9DC9</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>3F5E31E1-39A1-4654-B9A2-313C53E1C4E6</key>
+		<dict>
+			<key>ypos</key>
+			<real>1430</real>
+		</dict>
+		<key>440E02C2-99C1-4D74-B24A-ADB9B1F03F6E</key>
+		<dict>
+			<key>ypos</key>
+			<real>1310</real>
+		</dict>
+		<key>66791E9C-8B00-42FD-9678-29877AF50E7B</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>69905016-DBBE-4B99-83F3-E9016C188F75</key>
+		<dict>
+			<key>ypos</key>
+			<real>760</real>
+		</dict>
+		<key>6EFC92F6-AAD8-4469-9C55-5BF8F6D225BA</key>
+		<dict>
+			<key>ypos</key>
+			<real>1010</real>
+		</dict>
+		<key>7F101C6E-D5B3-436A-88E8-8F304BCFA823</key>
+		<dict>
+			<key>ypos</key>
+			<real>970</real>
+		</dict>
+		<key>A695027C-45EA-4332-BB70-D7C271556AC7</key>
+		<dict>
+			<key>ypos</key>
+			<real>480</real>
+		</dict>
+		<key>C0C2258E-1EAA-4D93-A5AE-E27DAB4A7417</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>D312AF39-8CBE-423E-8B08-26183EE0385D</key>
+		<dict>
+			<key>ypos</key>
+			<real>910</real>
+		</dict>
+		<key>E13FFE34-557D-419B-BBE5-9A46BC4CD9BD</key>
+		<dict>
+			<key>ypos</key>
+			<real>710</real>
+		</dict>
+		<key>EDBE1265-8658-4B56-AD87-A3530268AB49</key>
+		<dict>
+			<key>ypos</key>
+			<real>1220</real>
+		</dict>
+		<key>F6BFB9B0-82BB-42B9-870B-74F2884A73B1</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
+		</dict>
+		<key>angular</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>coffeescript</key>
+		<dict>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>css</key>
+		<dict>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>d3</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>dom</key>
+		<dict>
+			<key>ypos</key>
+			<real>410</real>
+		</dict>
+		<key>dom_events</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>git</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>html</key>
+		<dict>
+			<key>ypos</key>
+			<real>710</real>
+		</dict>
+		<key>http</key>
+		<dict>
+			<key>ypos</key>
+			<real>810</real>
+		</dict>
+		<key>jquery</key>
+		<dict>
+			<key>ypos</key>
+			<real>1010</real>
+		</dict>
+		<key>jqueryui</key>
+		<dict>
+			<key>ypos</key>
+			<real>1110</real>
+		</dict>
+		<key>js</key>
+		<dict>
+			<key>ypos</key>
+			<real>910</real>
+		</dict>
+		<key>lodash</key>
+		<dict>
+			<key>ypos</key>
+			<real>1210</real>
+		</dict>
+		<key>php</key>
+		<dict>
+			<key>ypos</key>
+			<real>1310</real>
+		</dict>
+		<key>sass</key>
+		<dict>
+			<key>ypos</key>
+			<real>1410</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
