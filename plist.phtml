@@ -1,0 +1,146 @@
+<?= '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>doc</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>openurl</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<?php foreach ($documentations as $doc): ?>
+		<key><?= $doc ?></key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>openurl</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<?php endforeach; ?>
+	</dict>
+	<key>createdby</key>
+	<string>Yannick Galatol</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>devdocs</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>openurl</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>doc</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for "{query}"</string>
+				<key>title</key>
+				<string>DevDocs</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>doc</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<?php foreach ($documentations as $title => $doc): ?>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string><?= $doc ?></string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = '<?= $doc ?>';
+require_once("devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for <?= $title ?> "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - <?= $title ?></string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string><?= $doc ?></string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<?php endforeach; ?>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>doc</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<?php $i = 1 ?>
+		<?php foreach ($documentations as $doc): ?>
+		<key><?= $doc ?></key>
+		<dict>
+			<key>ypos</key>
+			<real><?= ($i++ * 100) + 10 ?></real>
+		</dict>
+		<?php endforeach; ?>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
