@@ -42,7 +42,7 @@ class DevDocs {
 
         $query = strtolower($query);
 
-        $baseUrl = "http://devdocs.io/$documentation/";
+        $baseUrl = "http://docs.devdocs.io/$documentation.html";
 
         $data = json_decode(file_get_contents("$documentation.json"));
         $entries = $data->entries;
@@ -80,7 +80,7 @@ class DevDocs {
     private function render () {
         foreach ($this->results as $level => $results) {
             foreach ($results as $result) {
-                $this->workflows->result( $result->name, $baseUrl.$result->path, $result->name.' ('.$result->type.')', $result->path, $result->documentation.'.png' );
+                $this->workflows->result( $result->name, json_encode($result), $result->name.' ('.$result->type.')', $result->path, $result->documentation.'.png' );
             }
         }
         echo $this->workflows->toxml();
