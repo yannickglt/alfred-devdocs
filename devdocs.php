@@ -29,7 +29,7 @@ foreach ($entries as $key => $result) {
 	if (strpos($value, $query) === 0) {
         if (!isset($found[$value])) {
             $found[$value] = true;
-            $w->result( $result->name, $baseUrl.$result->path, $result->name." ".$result->path, $result->type, "$documentation.png" );
+            $w->result( $result->name, $baseUrl.$result->path.$endUrl, $result->name." ".$result->path, $result->type, "$documentation.png" );
         }
     }
     else if (strpos($value, $query) > 0) {
