@@ -6,6 +6,17 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
+		<key>07A1D8E8-D9A3-48A2-A2BC-DF8037552F80</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7141FA97-785B-46CF-8504-DB665A47E40E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>0C89D8F9-ED8A-4CAC-9EA1-A9E6AED59A62</key>
 		<array>
 			<dict>
@@ -21,7 +32,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>css</string>
+				<string>07A1D8E8-D9A3-48A2-A2BC-DF8037552F80</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -224,6 +235,65 @@ require_once("devdocs.php");</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>test</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>7141FA97-785B-46CF-8504-DB665A47E40E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>echo '{query}';
+
+
+
+function grab_image($url,$saveto){
+    $ch = curl_init ($url);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_BINARYTRANSFER,1);
+    $raw=curl_exec($ch);
+    curl_close ($ch);
+    if(file_exists($saveto)){
+        unlink($saveto);
+    }
+    $fp = fopen($saveto,'x');
+    fwrite($fp, $raw);
+    fclose($fp);
+}</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>07A1D8E8-D9A3-48A2-A2BC-DF8037552F80</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -249,6 +319,23 @@ require_once("devdocs.php");</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>angular</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>css</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -286,23 +373,6 @@ require_once("devdocs.php");</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>css</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -328,6 +398,23 @@ require_once("devdocs.php");</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>d3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>paths</key>
+				<array>
+					<string>~/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/alfred-devdocs/test.php</string>
+				</array>
+				<key>toggle</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.launchfiles</string>
+			<key>uid</key>
+			<string>55A1CAC4-2AC4-4D97-8AD7-1671226FB722</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -677,6 +764,11 @@ require_once("devdocs.php");</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>07A1D8E8-D9A3-48A2-A2BC-DF8037552F80</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
 		<key>0C89D8F9-ED8A-4CAC-9EA1-A9E6AED59A62</key>
 		<dict>
 			<key>ypos</key>
@@ -712,6 +804,11 @@ require_once("devdocs.php");</string>
 			<key>ypos</key>
 			<real>1310</real>
 		</dict>
+		<key>55A1CAC4-2AC4-4D97-8AD7-1671226FB722</key>
+		<dict>
+			<key>ypos</key>
+			<real>330</real>
+		</dict>
 		<key>66791E9C-8B00-42FD-9678-29877AF50E7B</key>
 		<dict>
 			<key>ypos</key>
@@ -726,6 +823,11 @@ require_once("devdocs.php");</string>
 		<dict>
 			<key>ypos</key>
 			<real>1010</real>
+		</dict>
+		<key>7141FA97-785B-46CF-8504-DB665A47E40E</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
 		</dict>
 		<key>7F101C6E-D5B3-436A-88E8-8F304BCFA823</key>
 		<dict>

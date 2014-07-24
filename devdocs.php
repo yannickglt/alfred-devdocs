@@ -12,7 +12,8 @@ if ( filemtime("$documentation.json") <= time()-86400*7  || 1) {
 if (!isset($query)) { $query = urlencode( "css" ); }
 $query = strtolower($query);
 
-$baseUrl = "http://devdocs.io/$documentation/";
+$baseUrl = "http://docs.devdocs.io/$documentation/";
+$endUrl = ".html";
 
 $data = json_decode(file_get_contents("$documentation.json"));
 $entries = $data->entries;
@@ -46,11 +47,11 @@ foreach ($entries as $key => $result) {
 }
 
 foreach ($extras as $key => $result) {
-    $w->result( $result->name, $baseUrl.$result->path, $result->name.' ('.$result->type.')', $result->path, "$documentation.png"  );
+    $w->result( $result->name, $baseUrl.$result->path.$endUrl, $result->name.' ('.$result->type.')', $result->path, "$documentation.png"  );
 }
 
 foreach ($extras2 as $key => $result) {
-    $w->result( $result->name, $baseUrl.$result->path, $result->name.' ('.$result->type.')', $result->path, "$documentation.png"  );
+    $w->result( $result->name, $baseUrl.$result->path.$endUrl, $result->name.' ('.$result->type.')', $result->path, "$documentation.png"  );
 }
 
 echo $w->toxml();
