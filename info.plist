@@ -20,7 +20,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -31,7 +31,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -42,7 +42,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -53,7 +53,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -64,7 +64,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -75,7 +75,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -86,7 +86,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -97,7 +97,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -108,7 +108,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -119,7 +119,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -130,7 +130,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -141,7 +141,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -152,7 +152,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -163,7 +163,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -174,7 +174,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -185,7 +185,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -196,7 +196,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -207,7 +207,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -218,7 +218,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -229,7 +229,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -240,7 +240,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -251,7 +251,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -262,7 +262,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -273,7 +273,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -284,7 +284,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -295,7 +295,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -306,7 +306,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -317,7 +317,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -328,7 +328,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -339,7 +339,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -350,7 +350,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -361,7 +361,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -372,7 +372,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -383,7 +383,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -394,7 +394,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -405,7 +405,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -416,7 +416,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -427,7 +427,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -438,7 +438,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -449,7 +449,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -460,7 +460,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>output</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -481,17 +481,18 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<false/>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>script</key>
+				<string>$data = "{query}";
+require_once("scripts/output.php");</string>
+				<key>type</key>
+				<integer>1</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>openurl</string>
+			<string>output</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -508,7 +509,7 @@
 				<string>Searching for "{query}"</string>
 				<key>script</key>
 				<string>$query = "{query}";
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for "{query}"</string>
 				<key>title</key>
@@ -539,7 +540,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'angular';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Angular.js "{query}"</string>
 				<key>title</key>
@@ -570,7 +571,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'coffeescript';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for CoffeeScript "{query}"</string>
 				<key>title</key>
@@ -601,7 +602,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'css';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for CSS "{query}"</string>
 				<key>title</key>
@@ -632,7 +633,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'd3';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for D3.js "{query}"</string>
 				<key>title</key>
@@ -663,7 +664,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'dom';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for DOM "{query}"</string>
 				<key>title</key>
@@ -694,7 +695,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'dom_events';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for DOM Events "{query}"</string>
 				<key>title</key>
@@ -725,7 +726,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'git';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Git "{query}"</string>
 				<key>title</key>
@@ -756,7 +757,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'html';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for HTML "{query}"</string>
 				<key>title</key>
@@ -787,7 +788,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'http';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for HTTP "{query}"</string>
 				<key>title</key>
@@ -818,7 +819,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'javascript';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for JavaScript "{query}"</string>
 				<key>title</key>
@@ -849,7 +850,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'jquery';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for jQuery "{query}"</string>
 				<key>title</key>
@@ -880,7 +881,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'jqueryui';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for jQuery UI "{query}"</string>
 				<key>title</key>
@@ -911,7 +912,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'lodash';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Lo-Dash "{query}"</string>
 				<key>title</key>
@@ -942,7 +943,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'php';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for PHP "{query}"</string>
 				<key>title</key>
@@ -973,7 +974,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'sass';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Sass "{query}"</string>
 				<key>title</key>
@@ -1004,7 +1005,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'backbone';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Backbone.js "{query}"</string>
 				<key>title</key>
@@ -1035,7 +1036,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'c';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for C "{query}"</string>
 				<key>title</key>
@@ -1066,7 +1067,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'cpp';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for C++ "{query}"</string>
 				<key>title</key>
@@ -1097,7 +1098,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'chai';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Chai "{query}"</string>
 				<key>title</key>
@@ -1128,7 +1129,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'cordova';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Cordova "{query}"</string>
 				<key>title</key>
@@ -1159,7 +1160,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'ember';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Ember.js "{query}"</string>
 				<key>title</key>
@@ -1190,7 +1191,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'express';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Express "{query}"</string>
 				<key>title</key>
@@ -1221,7 +1222,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'go';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Go "{query}"</string>
 				<key>title</key>
@@ -1241,17 +1242,6 @@ require_once("devdocs.php");</string>
 				<dict>
 			<key>config</key>
 			<dict>
-<<<<<<< HEAD
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>9C11C835-7115-4779-9969-696E67B3E772</string>
-=======
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -1263,7 +1253,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'grunt';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Grunt "{query}"</string>
 				<key>title</key>
@@ -1277,7 +1267,6 @@ require_once("devdocs.php");</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>grunt</string>
->>>>>>> b345c452b4f3f80a215859471377d9d66ce100c6
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -1293,20 +1282,13 @@ require_once("devdocs.php");</string>
 				<key>runningsubtext</key>
 				<string>Searching for "{query}"</string>
 				<key>script</key>
-<<<<<<< HEAD
-				<string>$url = "{query}";
-require_once("output.php");
-
-</string>
-=======
 				<string>$query = "{query}";
 $documentation = 'haskell';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Haskell "{query}"</string>
 				<key>title</key>
 				<string>DevDocs - Haskell</string>
->>>>>>> b345c452b4f3f80a215859471377d9d66ce100c6
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>
@@ -1333,7 +1315,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'jquerymobile';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for jQuery Mobile "{query}"</string>
 				<key>title</key>
@@ -1353,8 +1335,6 @@ require_once("devdocs.php");</string>
 				<dict>
 			<key>config</key>
 			<dict>
-<<<<<<< HEAD
-=======
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -1366,7 +1346,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'knockout';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Knockout.js "{query}"</string>
 				<key>title</key>
@@ -1386,7 +1366,6 @@ require_once("devdocs.php");</string>
 				<dict>
 			<key>config</key>
 			<dict>
->>>>>>> b345c452b4f3f80a215859471377d9d66ce100c6
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -1398,7 +1377,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'laravel';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Laravel "{query}"</string>
 				<key>title</key>
@@ -1418,23 +1397,6 @@ require_once("devdocs.php");</string>
 				<dict>
 			<key>config</key>
 			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>css</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -1446,7 +1408,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'less';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Less "{query}"</string>
 				<key>title</key>
@@ -1466,8 +1428,6 @@ require_once("devdocs.php");</string>
 				<dict>
 			<key>config</key>
 			<dict>
-<<<<<<< HEAD
-=======
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -1479,7 +1439,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'maxcdn';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for MaxCDN "{query}"</string>
 				<key>title</key>
@@ -1499,7 +1459,6 @@ require_once("devdocs.php");</string>
 				<dict>
 			<key>config</key>
 			<dict>
->>>>>>> b345c452b4f3f80a215859471377d9d66ce100c6
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -1511,7 +1470,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'moment';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Moment.js "{query}"</string>
 				<key>title</key>
@@ -1542,7 +1501,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'node';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Node.js "{query}"</string>
 				<key>title</key>
@@ -1573,7 +1532,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'postgresql';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for PostgreSQL "{query}"</string>
 				<key>title</key>
@@ -1604,7 +1563,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'python';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Python "{query}"</string>
 				<key>title</key>
@@ -1635,7 +1594,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'redis';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Redis "{query}"</string>
 				<key>title</key>
@@ -1666,7 +1625,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'requirejs';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for RequireJS "{query}"</string>
 				<key>title</key>
@@ -1697,7 +1656,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'ruby';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Ruby "{query}"</string>
 				<key>title</key>
@@ -1728,7 +1687,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'rails';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Ruby on Rails "{query}"</string>
 				<key>title</key>
@@ -1759,7 +1718,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'sinon';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Sinon "{query}"</string>
 				<key>title</key>
@@ -1790,7 +1749,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'underscore';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Underscore.js "{query}"</string>
 				<key>title</key>
@@ -1821,7 +1780,7 @@ require_once("devdocs.php");</string>
 				<key>script</key>
 				<string>$query = "{query}";
 $documentation = 'yii';
-require_once("devdocs.php");</string>
+require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
 				<string>Search for Yii "{query}"</string>
 				<key>title</key>
@@ -1846,7 +1805,7 @@ require_once("devdocs.php");</string>
 		<key>doc</key>
 		<dict>
 			<key>ypos</key>
-			<real>60</real>
+			<real>10</real>
 		</dict>
 						<key>angular</key>
 		<dict>
@@ -1913,16 +1872,12 @@ require_once("devdocs.php");</string>
 			<key>ypos</key>
 			<real>1310</real>
 		</dict>
-<<<<<<< HEAD
-		<key>66791E9C-8B00-42FD-9678-29877AF50E7B</key>
-=======
 				<key>php</key>
 		<dict>
 			<key>ypos</key>
 			<real>1410</real>
 		</dict>
 				<key>sass</key>
->>>>>>> b345c452b4f3f80a215859471377d9d66ce100c6
 		<dict>
 			<key>ypos</key>
 			<real>1510</real>
@@ -1937,17 +1892,6 @@ require_once("devdocs.php");</string>
 			<key>ypos</key>
 			<real>1710</real>
 		</dict>
-<<<<<<< HEAD
-		<key>7F101C6E-D5B3-436A-88E8-8F304BCFA823</key>
-		<dict>
-			<key>ypos</key>
-			<real>970</real>
-		</dict>
-		<key>9C11C835-7115-4779-9969-696E67B3E772</key>
-		<dict>
-			<key>ypos</key>
-			<real>10</real>
-=======
 				<key>cpp</key>
 		<dict>
 			<key>ypos</key>
@@ -1957,7 +1901,6 @@ require_once("devdocs.php");</string>
 		<dict>
 			<key>ypos</key>
 			<real>1910</real>
->>>>>>> b345c452b4f3f80a215859471377d9d66ce100c6
 		</dict>
 				<key>cordova</key>
 		<dict>
@@ -1992,11 +1935,7 @@ require_once("devdocs.php");</string>
 				<key>jquerymobile</key>
 		<dict>
 			<key>ypos</key>
-<<<<<<< HEAD
-			<real>130</real>
-=======
 			<real>2610</real>
->>>>>>> b345c452b4f3f80a215859471377d9d66ce100c6
 		</dict>
 				<key>knockout</key>
 		<dict>
