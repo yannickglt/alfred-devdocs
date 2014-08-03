@@ -1,20 +1,93 @@
 <?php
-
+/**
+ *  Configure Alfred DevDocs Workflow
+ *  Availables Commands :
+ *  	add : Add a doc to the workflow
+ *  	remove  : Remove a doc to the workflow
+ *  	refrehs : Refresh all installed docs databases
+ *  	list : List all availlables databases
+ */
+/**
+ *  Todo :
+ *  	- create a snippet for quick add doc in docs availables
+ *  	- edit a plist file and save it
+ */
+namespace CFPropertyList;
+require_once 'vendor/autoload.php';
 require_once 'workflows.php';
-
-// $workflows = new Workflows();
-// $workflows->result('myuid', 'Query '.$query.'  -  '.__FILE__, 'Hey !', 'Sub', 'doc.png');
-// echo $workflows->toxml();
+require_once 'documentations.php';
 
 class DevDocsConf {
 
-    private $jsonConf;
-    private $confPath = 'conf/';
+	private $commands      = array('add' => 1, 'remove' => 1, 'refresh' => 0, 'list' => 0);
+	private $currentCmd    = array();
+	private $currentConfig = array();
+    private $query;
+    private $documentations;
     private $workflows;
+    private $pList;
+    private $rootPath;
 
 
-    public function __construct($query) {
-        $this->workflows = new Workflows();
+    public function __construct($query, $documentations) {
+		$this->query          = $query;
+		$this->documentations = $documentations;
+		$this->workflows      = new \Workflows();
+
+        $this->parseCommand($query);
+        $this->buildRootPath();
+        $this->openPlist();
+        $this->setCurrentConfig();
+
+        if ($this->parseCommand($query)) {
+        	$this->{$this->currentCmd[0].'Cmd'}();
+        }
+    }
+
+    private function openPlist(){
+    	$this->pList = new CFPropertyList($this->rootPath.'/info.plist');
+    	$this->pList = $this->pList->toArray();
+    }
+
+    private function parseCommand($rawQuery){
+    	$this->currentCmd = explode(' ', $rawQuery);
+    	return (!empty($this->currentCmd) && key_exists($this->currentCmd[0], $this->commands) && (count($this->currentCmd) - 1) === $this->commands[$this->currentCmd[0]] );
+    }
+
+    private function buildRootPath(){
+    	$this->rootPath = str_replace('/scripts', '', $this->workflows->path());
+    }
+
+    private function setCurrentConfig(){
+    	foreach ($this->pList['connections'] as $key => $value) {
+    		if(in_array($key, $this->documentations)){
+    			array_push($this->currentConfig, $key);
+    		}
+    	}
+    }
+
+    private function addCmd(){
+    	echo PHP_EOL;
+       	echo "Add Command : ".$this->currentCmd[1];
+        echo PHP_EOL;
+    }
+
+    private function removeCmd(){
+    	echo PHP_EOL;
+       	echo "Remove Command : ".$this->currentCmd[1];
+        echo PHP_EOL;
+    }
+
+    private function updateCmd(){
+    	echo PHP_EOL;
+       	echo "Update Command";
+        echo PHP_EOL;
+    }
+
+    private function listCmd(){
+    	echo PHP_EOL;
+       	echo "List Command";
+        echo PHP_EOL;
     }
 
 //     private function checkCache ($documentation) {
@@ -73,5 +146,6 @@ class DevDocsConf {
 //         echo $this->workflows->toxml();
 //     }
 }
-
-// new DevDocs($query, $documentation);
+$query = "add rails";
+// $query = "remove bouleshit";
+new DevDocsConf($query, $documentations);

@@ -122,6 +122,32 @@ require_once("scripts/devdocs.php");</string>
 			<integer>0</integer>
 		</dict>
 		<?php endforeach; ?>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>doc:c</string>
+				<key>script</key>
+				<string>$query = "{query}";
+require_once("scripts/conf.php");</string>
+				<key>title</key>
+				<string>Configure DevDocs workflow</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8EA78EFB-38D0-4D59-AFC0-692B8122A33E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
