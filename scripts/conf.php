@@ -22,6 +22,7 @@ class DevDocsConf {
 	private $commands      = array('add' => 1, 'remove' => 1, 'refresh' => 0, 'list' => 0);
 	private $currentCmd    = array();
 	private $currentConfig = array();
+	private $output        = array();
     private $query;
     private $documentations;
     private $workflows;
@@ -39,8 +40,9 @@ class DevDocsConf {
         $this->openPlist();
         $this->setCurrentConfig();
 
-        if ($this->parseCommand($query)) {
+        if ($this->parseCommand($query) && method_exists($this, $this->currentCmd[0].'Cmd')) {
         	$this->{$this->currentCmd[0].'Cmd'}();
+        	$this->flushToAlfred();
         }
     }
 
@@ -51,7 +53,7 @@ class DevDocsConf {
 
     private function parseCommand($rawQuery){
     	$this->currentCmd = explode(' ', $rawQuery);
-    	return (!empty($this->currentCmd) && key_exists($this->currentCmd[0], $this->commands) && (count($this->currentCmd) - 1) === $this->commands[$this->currentCmd[0]] );
+    	return (!empty($this->currentCmd) && key_exists($this->currentCmd[0], $this->commands) && (count($this->currentCmd) - 1) >= $this->commands[$this->currentCmd[0]] );
     }
 
     private function buildRootPath(){
@@ -59,17 +61,40 @@ class DevDocsConf {
     }
 
     private function setCurrentConfig(){
+    	$flippedDocumentations = array_flip($this->documentations);
     	foreach ($this->pList['connections'] as $key => $value) {
-    		if(in_array($key, $this->documentations)){
-    			array_push($this->currentConfig, $key);
+    		if(array_key_exists($key, $flippedDocumentations)){
+    			$this->currentConfig[$flippedDocumentations[$key]] = $key;
     		}
     	}
     }
 
+    private function flushToAlfred(){
+    	echo $this->workflows->toxml();
+    }
+
+    private function regeneratePlist(){
+    	$buildPlist = function($rootPath, $documentations){
+	    	ob_start();
+			include $rootPath.'/scripts/plist.phtml';
+			$fileContent = ob_get_contents();
+			ob_end_clean();
+
+			file_put_contents($rootPath.'/info.plist', $fileContent);
+    	};
+    	$buildPlist($this->rootPath, $this->currentConfig);
+    }
+
     private function addCmd(){
-    	echo PHP_EOL;
-       	echo "Add Command : ".$this->currentCmd[1];
-        echo PHP_EOL;
+    	$this->currentConfig[$this->currentCmd[1]] = $this->documentations[$this->currentCmd[1]];
+    	$this->regeneratePlist();
+    	$this->workflows->result( 
+        	'devdocs--conf--add',
+        	'',
+        	'Add',
+        	'',
+        	$this->rootPath.'/doc.png'
+        );
     }
 
     private function removeCmd(){
@@ -85,67 +110,72 @@ class DevDocsConf {
     }
 
     private function listCmd(){
-    	echo PHP_EOL;
-       	echo "List Command";
-        echo PHP_EOL;
+    	$filter = (isset($this->currentCmd[1]))? $this->currentCmd[1] : '';
+    	$docs = array_filter(
+    		$this->documentations, 
+    		function($docKey) use ($filter){
+    			return ($filter !== '')? stripos($docKey, $filter) !== false : true;
+    		}
+    	);
+    	foreach ($docs as $docName => $key) {
+            $this->workflows->result( 
+            	$key,
+            	json_encode($conf),
+            	$docName,
+            	(isset($this->currentConfig[$docName]))? 'Already in your doc list' : '',
+            	$this->rootPath.'/'.$key.'.png'
+            );
+        }
     }
 
-//     private function checkCache ($documentation) {
-
-//          // Keep the docs in cache during 7 days
-//         if (!file_exists("$documentation.json") || (filemtime("$documentation.json") <= time() - 86400 * 7)) {
-//             file_put_contents("$documentation.json", file_get_contents("http://docs.devdocs.io/$documentation/index.json"));
-//         }
-//     }
-
-//     private function processDocumentation ($documentation, $query) {
-
-//         $query = strtolower($query);
-
-//         $baseUrl = "http://docs.devdocs.io/$documentation.html";
-
-//         $data = json_decode(file_get_contents("$documentation.json"));
-//         $entries = $data->entries;
-
-//         $found = array();
-//         foreach ($entries as $key => $result) {
-//             $value = strtolower(trim($result->name));
-//             $description = strtolower(utf8_decode(strip_tags($result->type)));
-            
-//             if (strpos($value, $query) === 0) {
-//                 if (!isset($found[$value])) {
-//                     $found[$value] = true;
-//                     $result->documentation = $documentation;
-//                     $this->results[0][] = $result;
-//                 }
-//             }
-//             else if (strpos($value, $query) > 0) {
-//                 if (!isset($found[$value])) {
-//                     $found[$value] = true;
-//                     $result->documentation = $documentation;
-//                     $this->results[1][] = $result;
-//                 }
-//             }
-//             else if (strpos($description, $query) !== false) {
-//                 if (!isset($found[$value])) {
-//                     $found[$value] = true;
-//                     $result->documentation = $documentation;
-//                     $this->results[2][] = $result;
-//                 }
-//             }
-//         }
-
-//     }
-
-//     private function render () {
-//         foreach ($this->results as $level => $results) {
-//             foreach ($results as $result) {
-//                 $this->workflows->result( $result->name, json_encode($result), $result->name.' ('.$result->type.')', $result->path, $result->documentation.'.png' );
-//             }
-//         }
-//         echo $this->workflows->toxml();
-//     }
 }
-$query = "add rails";
+// $query = "add Angular.js";
 // $query = "remove bouleshit";
 new DevDocsConf($query, $documentations);
+
+//  -- Connexion --
+// <key> $doc </key>
+// <array>
+// 	<dict>
+// 		<key>destinationuid</key>
+// 		<string>output</string>
+// 		<key>modifiers</key>
+// 		<integer>0</integer>
+// 		<key>modifiersubtext</key>
+// 		<string></string>
+// 	</dict>
+// </array>
+
+
+//  -- Objects --
+// <dict>
+// 	<key>config</key>
+// 	<dict>
+// 		<key>argumenttype</key>
+// 		<integer>0</integer>
+// 		<key>escaping</key>
+// 		<integer>127</integer>
+// 		<key>keyword</key>
+// 		<string> -- doc --</string>
+// 		<key>runningsubtext</key>
+// 		<string>Searching for "{query}"</string>
+// 		<key>script</key>
+// 		<string>$query = "{query}";
+// 	$documentation = '-- doc --';
+// 	require_once("scripts/devdocs.php");</string>
+// 		<key>subtext</key>
+// 		<string>Search for -- title -- "{query}"</string>
+// 		<key>title</key>
+// 		<string>DevDocs - -- title --</string>
+// 		<key>type</key>
+// 		<integer>1</integer>
+// 		<key>withspace</key>
+// 		<true/>
+// 	</dict>
+// 	<key>type</key>
+// 	<string>alfred.workflow.input.scriptfilter</string>
+// 	<key>uid</key>
+// 	<string>-- doc --</string>
+// 	<key>version</key>
+// 	<integer>0</integer>
+// </dict>
