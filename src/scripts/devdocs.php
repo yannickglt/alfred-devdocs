@@ -6,6 +6,8 @@ class DevDocs {
 
     private $workflows;
     private $results;
+    private static $baseUrl = 'http://devdocs.io/';
+    private static $cacheDirectory = 'cache/';
 
     public function __construct($query, $doc) {
         $this->workflows = new Workflows();
@@ -14,7 +16,6 @@ class DevDocs {
             1 => array(),
             2 => array()
         );
-
 
         if (!isset($doc) || empty($doc)) {
             include 'documentations.php';
@@ -25,27 +26,27 @@ class DevDocs {
                 $this->processDocumentation($documentation, $query);
             }
         } else {
-            $this->checkCache($documentation);
+            $this->checkCache($doc);
             $this->processDocumentation($doc, $query);
         }
         $this->render();
     }
 
     private function checkCache ($documentation) {
-
+        if (!file_exists(self::$cacheDirectory)) {
+            mkdir(self::$cacheDirectory);
+        }
+        $docFile = self::$cacheDirectory.$documentation.'.json';
          // Keep the docs in cache during 7 days
-        if (!file_exists("$documentation.json") || (filemtime("$documentation.json") <= time() - 86400 * 7)) {
-            file_put_contents("$documentation.json", file_get_contents("http://docs.devdocs.io/$documentation/index.json"));
+        if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7)) {
+            file_put_contents($docFile, file_get_contents('http://docs.devdocs.io/'.$documentation.'/index.json'));
         }
     }
 
     private function processDocumentation ($documentation, $query) {
 
         $query = strtolower($query);
-
-        $baseUrl = "http://docs.devdocs.io/$documentation.html";
-
-        $data = json_decode(file_get_contents("$documentation.json"));
+        $data = json_decode(file_get_contents(self::$cacheDirectory.$documentation.'.json'));
         $entries = $data->entries;
 
         $found = array();
@@ -81,7 +82,7 @@ class DevDocs {
     private function render () {
         foreach ($this->results as $level => $results) {
             foreach ($results as $result) {
-                $this->workflows->result( $result->name, json_encode($result), $result->name.' ('.$result->type.')', $result->path, $result->documentation.'.png' );
+                $this->workflows->result( $result->name, self::$baseUrl.$result->documentation.'/'.$result->path, $result->name.' ('.$result->type.')', $result->path, $result->documentation.'.png' );
             }
         }
         echo $this->workflows->toxml();
