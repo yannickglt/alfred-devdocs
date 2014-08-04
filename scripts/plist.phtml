@@ -28,7 +28,7 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>replacetask</key>
+		<key>refreshtask</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -108,7 +108,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
@@ -143,6 +143,8 @@ require_once("scripts/conf.php");</string>
 				<false/>
 				<key>sticky</key>
 				<false/>
+				<key>title</key>
+				<string>{query}</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -155,13 +157,13 @@ require_once("scripts/conf.php");</string>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
 				<string>cdoc:add</string>
 				<key>script</key>
-				<string>$query = "add {query}";
+				<string>$query = "selectAdd {query}";
 require_once("scripts/conf.php");</string>
 				<key>title</key>
 				<string>Add a doc on DevDocs workflow</string>
@@ -181,9 +183,10 @@ require_once("scripts/conf.php");</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>126</integer>
 				<key>script</key>
-				<string>//Should do action based on query</string>
+				<string>$query = "{query}";
+require_once("scripts/conf.php");</string>
 				<key>type</key>
 				<integer>1</integer>
 			</dict>
@@ -198,13 +201,13 @@ require_once("scripts/conf.php");</string>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
 				<string>cdoc:remove</string>
 				<key>script</key>
-				<string>$query = "remove {query}";
+				<string>$query = "selectRemove {query}";
 require_once("scripts/conf.php");</string>
 				<key>title</key>
 				<string>Remove a doc on DevDocs workflow</string>
@@ -272,13 +275,13 @@ require_once("scripts/devdocs.php");</string>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
 				<string>cdoc:refresh</string>
 				<key>script</key>
-				<string>$query = "refresh {query}";
+				<string>$query = "selectRefresh {query}";
 require_once("scripts/conf.php");</string>
 				<key>title</key>
 				<string>Refresh docs on DevDocs workflow</string>
@@ -290,7 +293,7 @@ require_once("scripts/conf.php");</string>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>replacetask</string>
+			<string>refreshtask</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -362,7 +365,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>ypos</key>
 			<real>210</real>
 		</dict>
-		<key>replacetask</key>
+		<key>refreshtask</key>
 		<dict>
 			<key>ypos</key>
 			<real>310</real>

@@ -9,15 +9,14 @@
  */
 /**
  *  Todo :
- *  	- Configure devdoc conf tasks
+ *      - (current) Put list when you need to chose a doc before a conf action
+ *      - (current) Bind all actions to task
+ *      - rebind devdocs task to output
+ *      - Create a task, put all
+ *      - Create a task, nuke
+ *      - Clean repository
+ *      - Merge !
  *  	- Reput doc and open url tasks
- *  	- Finish update of plist template
- *  	- Put list when you need to chose a doc before a conf action
- *  	- Bind all actions to task
- *  	- Create a task, put all
- *  	- Create a task, nuke
- *  	- Clean repository
- *  	- Merge !
  */
 namespace CFPropertyList;
 require_once 'vendor/autoload.php';
@@ -26,7 +25,7 @@ require_once 'documentations.php';
 
 class DevDocsConf {
 
-	private $commands      = array('add' => 1, 'remove' => 1, 'refresh' => 1, 'list' => 1);
+	private $commands      = array('add' => 1, 'remove' => 1, 'refresh' => 1, 'list' => 1 , 'select' => 0);
 	private $currentCmd    = array();
 	private $currentConfig = array();
 	private $output        = array();
@@ -47,9 +46,8 @@ class DevDocsConf {
         $this->openPlist();
         $this->setCurrentConfig();
 
-        if ($this->parseCommand($query) && method_exists($this, $this->currentCmd[0].'Cmd')) {
+        if (method_exists($this, $this->currentCmd[0].'Cmd')) {
         	$this->{$this->currentCmd[0].'Cmd'}();
-        	$this->flushToAlfred();
         }
     }
 
@@ -60,7 +58,17 @@ class DevDocsConf {
 
     private function parseCommand($rawQuery){
     	$this->currentCmd = explode(' ', $rawQuery);
-    	return (!empty($this->currentCmd) && key_exists($this->currentCmd[0], $this->commands) && (count($this->currentCmd) - 1) >= $this->commands[$this->currentCmd[0]] );
+        if(!empty($this->currentCmd)){
+            $commandToCheck = (strpos($this->currentCmd[0], 'select') === 0)? 'select' : $this->currentCmd[0];
+            return ( 
+                ($commandToCheck === 'select' || key_exists($commandToCheck, $this->commands)) && 
+                (count($this->currentCmd) - 1 >= $this->commands[$commandToCheck])
+            );
+        }
+        else{
+            $this->currentCmd[0] = '';
+        }
+        return false;
     }
 
     private function buildRootPath(){
@@ -92,28 +100,56 @@ class DevDocsConf {
     	$buildPlist($this->rootPath, $this->currentConfig);
     }
 
+    private function filter($search, $collection){
+        return array_filter(
+            $collection, 
+            function($key) use ($search){
+                return ($search !== '')? stripos($key, $search) !== false : true;
+            }
+        );
+    }
+
+    private function selectAddCmd(){
+        $search         = (isset($this->currentCmd[1]))? $this->currentCmd[1] : '';
+        $docsAvailables = array_diff($this->documentations, $this->currentConfig);
+        $docsAvailables = $this->filter($search, $docsAvailables);
+        foreach ($docsAvailables as $docName => $key) {
+            $this->workflows->result( 
+                $key,
+                "add ".$docName,
+                $docName,
+                '',
+                $this->rootPath.'/'.$key.'.png'
+            );
+        }
+        $this->flushToAlfred();
+    }
+
     private function addCmd(){
     	$this->currentConfig[$this->currentCmd[1]] = $this->documentations[$this->currentCmd[1]];
     	$this->regeneratePlist();
-    	$this->workflows->result( 
-        	'devdocs--conf--add',
-        	'',
-        	'Add',
-        	'',
-        	$this->rootPath.'/doc.png'
-        );
+        echo $this->currentCmd[1].' added !';
+    }
+
+    private function selectRemoveCmd(){
+        $search         = (isset($this->currentCmd[1]))? $this->currentCmd[1] : '';
+        $docsAvailables = $this->filter($search, $this->currentConfig);
+        foreach ($docsAvailables as $docName => $key) {
+            $this->workflows->result( 
+                $key,
+                "remove ".$docName,
+                $docName,
+                '',
+                $this->rootPath.'/'.$key.'.png'
+            );
+        }
+        $this->flushToAlfred();
     }
 
     private function removeCmd(){
     	unset($this->currentConfig[$this->currentCmd[1]]);
-    	$this->regeneratePlist();
-    	$this->workflows->result( 
-        	'devdocs--conf--remove',
-        	'',
-        	'Remove',
-        	'',
-        	$this->rootPath.'/doc.png'
-        );
+        $this->regeneratePlist();
+        echo $this->currentCmd[1].' removed !';
     }
 
     private function refreshCmd(){
@@ -133,13 +169,8 @@ class DevDocsConf {
     }
 
     private function listCmd(){
-    	$filter = (isset($this->currentCmd[1]))? $this->currentCmd[1] : '';
-    	$docs = array_filter(
-    		$this->documentations, 
-    		function($docKey) use ($filter){
-    			return ($filter !== '')? stripos($docKey, $filter) !== false : true;
-    		}
-    	);
+        $search = (isset($this->currentCmd[1]))? $this->currentCmd[1] : '';
+        $docs   = $this->filter($search, $this->documentations);
     	foreach ($docs as $docName => $key) {
             $this->workflows->result( 
             	$key,
@@ -149,14 +180,16 @@ class DevDocsConf {
             	$this->rootPath.'/'.$key.'.png'
             );
         }
+        $this->flushToAlfred();
     }
 
 }
 // $query = "refresh";
 // $query = "remove Angular.js";
-// $query = "add Angular.js";
+// $query = "selectAdd Backb";
 // $query = "add Backbone.js";
 // $query = "add Sass";
 // $query = "remove Sass";
+// $query = "selectRemove";
 // $query = "remove bouleshit";
 new DevDocsConf($query, $documentations);
