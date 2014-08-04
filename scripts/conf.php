@@ -9,8 +9,15 @@
  */
 /**
  *  Todo :
- *  	- create a snippet for quick add doc in docs availables
- *  	- edit a plist file and save it
+ *  	- Configure devdoc conf tasks
+ *  	- Reput doc and open url tasks
+ *  	- Finish update of plist template
+ *  	- Put list when you need to chose a doc before a conf action
+ *  	- Bind all actions to task
+ *  	- Create a task, put all
+ *  	- Create a task, nuke
+ *  	- Clean repository
+ *  	- Merge !
  */
 namespace CFPropertyList;
 require_once 'vendor/autoload.php';
@@ -19,7 +26,7 @@ require_once 'documentations.php';
 
 class DevDocsConf {
 
-	private $commands      = array('add' => 1, 'remove' => 1, 'refresh' => 0, 'list' => 0);
+	private $commands      = array('add' => 1, 'remove' => 1, 'refresh' => 1, 'list' => 1);
 	private $currentCmd    = array();
 	private $currentConfig = array();
 	private $output        = array();
@@ -98,15 +105,31 @@ class DevDocsConf {
     }
 
     private function removeCmd(){
-    	echo PHP_EOL;
-       	echo "Remove Command : ".$this->currentCmd[1];
-        echo PHP_EOL;
+    	unset($this->currentConfig[$this->currentCmd[1]]);
+    	$this->regeneratePlist();
+    	$this->workflows->result( 
+        	'devdocs--conf--remove',
+        	'',
+        	'Remove',
+        	'',
+        	$this->rootPath.'/doc.png'
+        );
     }
 
-    private function updateCmd(){
-    	echo PHP_EOL;
-       	echo "Update Command";
-        echo PHP_EOL;
+    private function refreshCmd(){
+    	foreach ($this->currentConfig as $docName => $key) {
+            file_put_contents(
+            	$this->rootPath."/".$key.".json", 
+            	file_get_contents("http://docs.devdocs.io/".$key."/index.json")
+            );
+    	}
+    	$this->workflows->result( 
+        	'devdocs--conf--refresh',
+        	'',
+        	'refresh',
+        	'',
+        	$this->rootPath.'/doc.png'
+        );
     }
 
     private function listCmd(){
@@ -129,53 +152,11 @@ class DevDocsConf {
     }
 
 }
+// $query = "refresh";
+// $query = "remove Angular.js";
 // $query = "add Angular.js";
+// $query = "add Backbone.js";
+// $query = "add Sass";
+// $query = "remove Sass";
 // $query = "remove bouleshit";
 new DevDocsConf($query, $documentations);
-
-//  -- Connexion --
-// <key> $doc </key>
-// <array>
-// 	<dict>
-// 		<key>destinationuid</key>
-// 		<string>output</string>
-// 		<key>modifiers</key>
-// 		<integer>0</integer>
-// 		<key>modifiersubtext</key>
-// 		<string></string>
-// 	</dict>
-// </array>
-
-
-//  -- Objects --
-// <dict>
-// 	<key>config</key>
-// 	<dict>
-// 		<key>argumenttype</key>
-// 		<integer>0</integer>
-// 		<key>escaping</key>
-// 		<integer>127</integer>
-// 		<key>keyword</key>
-// 		<string> -- doc --</string>
-// 		<key>runningsubtext</key>
-// 		<string>Searching for "{query}"</string>
-// 		<key>script</key>
-// 		<string>$query = "{query}";
-// 	$documentation = '-- doc --';
-// 	require_once("scripts/devdocs.php");</string>
-// 		<key>subtext</key>
-// 		<string>Search for -- title -- "{query}"</string>
-// 		<key>title</key>
-// 		<string>DevDocs - -- title --</string>
-// 		<key>type</key>
-// 		<integer>1</integer>
-// 		<key>withspace</key>
-// 		<true/>
-// 	</dict>
-// 	<key>type</key>
-// 	<string>alfred.workflow.input.scriptfilter</string>
-// 	<key>uid</key>
-// 	<string>-- doc --</string>
-// 	<key>version</key>
-// 	<integer>0</integer>
-// </dict>

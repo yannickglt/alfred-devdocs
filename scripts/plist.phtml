@@ -6,11 +6,44 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
-		<key>doc</key>
+		<key>addtask</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>openurl</string>
+				<string>dotaskbasedoncommand</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>removetask</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>dotaskbasedoncommand</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>replacetask</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>dotaskbasedoncommand</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>dotaskbasedoncommand</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>shownotificationwhencomplete</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -41,6 +74,152 @@
 	<string>devdocs</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>doc</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+require_once("scripts/devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for "{query}"</string>
+				<key>title</key>
+				<string>DevDocs</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>docglobal</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>cdoc:list</string>
+				<key>script</key>
+				<string>$query = "list {query}";
+require_once("scripts/conf.php");</string>
+				<key>title</key>
+				<string>List available docs on DevDocs workflow</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>listtask</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>shownotificationwhencomplete</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>cdoc:add</string>
+				<key>script</key>
+				<string>$query = "add {query}";
+require_once("scripts/conf.php");</string>
+				<key>title</key>
+				<string>Add a doc on DevDocs workflow</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>addtask</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>//Should do action based on query</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>dotaskbasedoncommand</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>cdoc:remove</string>
+				<key>script</key>
+				<string>$query = "remove {query}";
+require_once("scripts/conf.php");</string>
+				<key>title</key>
+				<string>Remove a doc on DevDocs workflow</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>removetask</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -89,6 +268,32 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>cdoc:refresh</string>
+				<key>script</key>
+				<string>$query = "refresh {query}";
+require_once("scripts/conf.php");</string>
+				<key>title</key>
+				<string>Refresh docs on DevDocs workflow</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>replacetask</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 		<?php foreach ($documentations as $title => $doc): ?>
 		<dict>
 			<key>config</key>
@@ -122,38 +327,47 @@ require_once("scripts/devdocs.php");</string>
 			<integer>0</integer>
 		</dict>
 		<?php endforeach; ?>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>keyword</key>
-				<string>doc:c</string>
-				<key>script</key>
-				<string>$query = "{query}";
-require_once("scripts/conf.php");</string>
-				<key>title</key>
-				<string>Configure DevDocs workflow</string>
-				<key>type</key>
-				<integer>1</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>8EA78EFB-38D0-4D59-AFC0-692B8122A33E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 	</array>
-	<key>readme</key>
-	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>docglobal</key>
+		<dict/>
+		<key>addtask</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
 		<key>doc</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>dotaskbasedoncommand</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>listtask</key>
+		<dict>
+			<key>ypos</key>
+			<real>410</real>
+		</dict>
+		<key>output</key>
+		<dict>
+			<key>ypos</key>
+			<real>520</real>
+		</dict>
+		<key>removetask</key>
+		<dict>
+			<key>ypos</key>
+			<real>210</real>
+		</dict>
+		<key>replacetask</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>shownotificationwhencomplete</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
@@ -163,7 +377,7 @@ require_once("scripts/conf.php");</string>
 		<key><?= $doc ?></key>
 		<dict>
 			<key>ypos</key>
-			<real><?= ($i++ * 100) + 10 ?></real>
+			<real><?= ($i++ * 100) + 530 ?></real>
 		</dict>
 		<?php endforeach; ?>
 	</dict>
