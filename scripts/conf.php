@@ -6,17 +6,18 @@
  *  	remove  : Remove a doc to the workflow
  *  	refrehs : Refresh all installed docs databases
  *  	list : List all availlables databases
+ *      nuke : Reset to no docs selected
+ *      addall : Add all docs in workflow
  */
 /**
  *  Todo :
- *      - (current) Put list when you need to chose a doc before a conf action
- *      - (current) Bind all actions to task
- *      - rebind devdocs task to output
- *      - Create a task, put all
- *      - Create a task, nuke
+ *      - Patch add/remove when no available
+ *      - Merge master !
+ *      - update readme
+ *      - push/merge request
  *      - Clean repository
- *      - Merge !
- *  	- Reput doc and open url tasks
+ *      - On generate plist, sort item by name asc
+ *      - Add conf to specify output (Alex || openUrl)
  */
 namespace CFPropertyList;
 require_once 'vendor/autoload.php';
@@ -25,7 +26,7 @@ require_once 'documentations.php';
 
 class DevDocsConf {
 
-	private $commands      = array('add' => 1, 'remove' => 1, 'refresh' => 1, 'list' => 1 , 'select' => 0);
+	private $commands      = array('add' => 1, 'remove' => 1, 'refresh' => 1, 'list' => 1 , 'select' => 0, 'addAll' => 0 , 'nuke' => 0);
 	private $currentCmd    = array();
 	private $currentConfig = array();
 	private $output        = array();
@@ -152,20 +153,38 @@ class DevDocsConf {
         echo $this->currentCmd[1].' removed !';
     }
 
+    private function selectRefreshCmd(){
+        $search         = (isset($this->currentCmd[1]))? $this->currentCmd[1] : '';
+        $docsAvailables = $this->filter($search, $this->currentConfig);
+        $this->workflows->result( 
+            'all',
+            "refresh all",
+            "All docs",
+            '',
+            $this->rootPath.'/all.png'
+        );
+        foreach ($docsAvailables as $docName => $key) {
+            $this->workflows->result( 
+                $key,
+                "refresh ".$docName,
+                $docName,
+                '',
+                $this->rootPath.'/'.$key.'.png'
+            );
+        }
+        $this->flushToAlfred();
+    }
+
     private function refreshCmd(){
-    	foreach ($this->currentConfig as $docName => $key) {
+        $updateAll = ($this->currentCmd[1] === 'all');
+        $docToUpdate = ($updateAll)? array($this->currentCmd[1] => $this->currentConfig[$this->currentCmd[1]]) : $this->currentConfig;
+    	foreach ($docToUpdate as $docName => $key) {
             file_put_contents(
             	$this->rootPath."/".$key.".json", 
             	file_get_contents("http://docs.devdocs.io/".$key."/index.json")
             );
     	}
-    	$this->workflows->result( 
-        	'devdocs--conf--refresh',
-        	'',
-        	'refresh',
-        	'',
-        	$this->rootPath.'/doc.png'
-        );
+        echo (($updateAll)? 'All data docs': $this->currentCmd[1].' doc').' updated !';
     }
 
     private function listCmd(){
@@ -183,13 +202,25 @@ class DevDocsConf {
         $this->flushToAlfred();
     }
 
+    private function addAllCmd(){
+        $this->currentConfig = $this->documentations;
+        $this->regeneratePlist();
+        echo 'All docs added !';
+    }
+
+    private function nukeCmd(){
+        $this->currentConfig = array();
+        $this->regeneratePlist();
+        echo 'All docs removed !';
+    }
+
 }
 // $query = "refresh";
 // $query = "remove Angular.js";
 // $query = "selectAdd Backb";
 // $query = "add Backbone.js";
 // $query = "add Sass";
-// $query = "remove Sass";
-// $query = "selectRemove";
+// $query = "selectRefresh";
+// $query = "selectRefresh";
 // $query = "remove bouleshit";
 new DevDocsConf($query, $documentations);

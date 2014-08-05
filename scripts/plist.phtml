@@ -6,6 +6,50 @@
 	<string></string>
 	<key>connections</key>
 	<dict>
+		<key>nuketaskkeyword</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>nuketask</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>nuketask</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>shownotificationwhencomplete</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>addalltaskkeyword</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>addalltask</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>addalltask</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>shownotificationwhencomplete</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>addtask</key>
 		<array>
 			<dict>
@@ -297,6 +341,80 @@ require_once("scripts/conf.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>$query = "addAll";
+require_once("scripts/conf.php");</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>addalltask</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>cdoc:all</string>
+				<key>text</key>
+				<string>Add all available docs on DevDocs workflow</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>addalltaskkeyword</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>$query = "nuke";
+require_once("scripts/conf.php");</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>nuketask</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>cdoc:nuke</string>
+				<key>text</key>
+				<string>Remove all docs on your DevDocs workflow</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>nuketaskkeyword</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 		<?php foreach ($documentations as $title => $doc): ?>
 		<dict>
 			<key>config</key>
@@ -333,6 +451,26 @@ require_once("scripts/devdocs.php");</string>
 	</array>
 	<key>uidata</key>
 	<dict>
+		<key>nuketaskkeyword</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>nuketask</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>addalltaskkeyword</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>addalltask</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
 		<key>docglobal</key>
 		<dict/>
 		<key>addtask</key>
@@ -358,7 +496,7 @@ require_once("scripts/devdocs.php");</string>
 		<key>output</key>
 		<dict>
 			<key>ypos</key>
-			<real>520</real>
+			<real>720</real>
 		</dict>
 		<key>removetask</key>
 		<dict>
@@ -380,7 +518,7 @@ require_once("scripts/devdocs.php");</string>
 		<key><?= $doc ?></key>
 		<dict>
 			<key>ypos</key>
-			<real><?= ($i++ * 100) + 530 ?></real>
+			<real><?= ($i++ * 100) + 620 ?></real>
 		</dict>
 		<?php endforeach; ?>
 	</dict>
