@@ -92,7 +92,7 @@ class DevDocsConf {
     private function regeneratePlist(){
     	$buildPlist = function($rootPath, $documentations){
 	    	ob_start();
-			include $rootPath.'/scripts/plist.phtml';
+			include $rootPath.'/src/scripts/plist.phtml';
 			$fileContent = ob_get_contents();
 			ob_end_clean();
 
@@ -221,7 +221,7 @@ class DevDocsConf {
 // $query = "remove Angular.js";
 // $query = "selectAdd ";
 // $query = "add Backbone.js";
-// $query = "add Sass";
+$query = "addAll";
 // $query = "selectRefresh";
 // $query = "selectRefresh";
 // $query = "remove bouleshit";
