@@ -11,7 +11,6 @@
  */
 /**
  *  Todo :
- *      - Patch add/remove when no available
  *      - Merge master !
  *      - update readme
  *      - push/merge request
@@ -83,6 +82,7 @@ class DevDocsConf {
     			$this->currentConfig[$flippedDocumentations[$key]] = $key;
     		}
     	}
+        asort($this->currentConfig, SORT_STRING | SORT_FLAG_CASE);
     }
 
     private function flushToAlfred(){
@@ -102,12 +102,14 @@ class DevDocsConf {
     }
 
     private function filter($search, $collection){
-        return array_filter(
+        $filtered = array_filter(
             $collection, 
             function($key) use ($search){
                 return ($search !== '')? stripos($key, $search) !== false : true;
             }
         );
+        asort($filtered, SORT_STRING | SORT_FLAG_CASE);
+        return $filtered;
     }
 
     private function selectAddCmd(){
@@ -217,7 +219,7 @@ class DevDocsConf {
 }
 // $query = "refresh";
 // $query = "remove Angular.js";
-// $query = "selectAdd Backb";
+// $query = "selectAdd ";
 // $query = "add Backbone.js";
 // $query = "add Sass";
 // $query = "selectRefresh";
