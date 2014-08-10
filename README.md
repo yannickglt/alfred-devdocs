@@ -22,6 +22,19 @@ Global search may be slow the first time it is called because it will download a
 Using the "shift" key on a function will display a preview (using quicklook) of the doc.
 ![Preview](http://content.screencast.com/users/yannickglt/folders/Snagit/media/a339c2aa-a75d-4316-a8fb-d0d75e932912/2014-08-04_14-50-44.png)
 
+# How to configure this workflow
+
+By default, all docs are present in this workflow but maybe you dont need all docs and just a few of them. We have added a way to configure it with cdocs:... commands
+
+## Availables commands
+
+- cdocs:list = List all docs you can add in your workflow	
+- cdocs:add = Add a doc in your workflow, if you have already all docs, that command do nothing
+- cdocs:remove = Remove a doc in your workflow, if you haven't a doc in your workflow, that command do nothing
+- cdocs:addall = Add all docs available to your workflow
+- cdocs:nuke = Remove all docs in your workflow
+- cdocs:refresh = Refresh cache for a doc if specified or all if you want.
+
 # Install
 ```sh
 $ curl -L -O https://github.com/yannickglt/alfred-devdocs/archive/v1.0.0.zip ; unzip -o v1.0.0.zip -d "$HOME/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/" ; rm -f v1.0.0.zip

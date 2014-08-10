@@ -9,15 +9,6 @@
  *      nuke : Reset to no docs selected
  *      addall : Add all docs in workflow
  */
-/**
- *  Todo :
- *      - Merge master !
- *      - update readme
- *      - push/merge request
- *      - Clean repository
- *      - On generate plist, sort item by name asc
- *      - Add conf to specify output (Alex || openUrl)
- */
 namespace CFPropertyList;
 require_once 'vendor/autoload.php';
 require_once 'workflows.php';
@@ -92,7 +83,7 @@ class DevDocsConf {
     private function regeneratePlist(){
     	$buildPlist = function($rootPath, $documentations){
 	    	ob_start();
-			include $rootPath.'/src/scripts/plist.phtml';
+			include $rootPath.'/scripts/plist.phtml';
 			$fileContent = ob_get_contents();
 			ob_end_clean();
 
@@ -182,7 +173,7 @@ class DevDocsConf {
         $docToUpdate = ($updateAll)? array($this->currentCmd[1] => $this->currentConfig[$this->currentCmd[1]]) : $this->currentConfig;
     	foreach ($docToUpdate as $docName => $key) {
             file_put_contents(
-            	$this->rootPath."/".$key.".json", 
+            	$this->rootPath."/cache/".$key.".json", 
             	file_get_contents("http://docs.devdocs.io/".$key."/index.json")
             );
     	}
@@ -217,12 +208,4 @@ class DevDocsConf {
     }
 
 }
-// $query = "refresh";
-// $query = "remove Angular.js";
-// $query = "selectAdd ";
-// $query = "add Backbone.js";
-$query = "addAll";
-// $query = "selectRefresh";
-// $query = "selectRefresh";
-// $query = "remove bouleshit";
 new DevDocsConf($query, $documentations);
