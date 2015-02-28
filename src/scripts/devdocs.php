@@ -7,6 +7,7 @@ class DevDocs {
     private $workflows;
     private $results;
     private static $baseUrl = 'http://devdocs.io/';
+    private static $docUrl = 'http://maxcdn-docs.devdocs.io/';
     private static $cacheDirectory = 'cache/';
 
     public function __construct($query, $doc) {
@@ -39,7 +40,7 @@ class DevDocs {
         $docFile = self::$cacheDirectory.$documentation.'.json';
          // Keep the docs in cache during 7 days
         if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7)) {
-            file_put_contents($docFile, file_get_contents('http://docs.devdocs.io/'.$documentation.'/index.json'));
+            file_put_contents($docFile, file_get_contents(self::$docUrl.$documentation.'/index.json'));
         }
     }
 
@@ -47,6 +48,10 @@ class DevDocs {
 
         $query = strtolower($query);
         $data = json_decode(file_get_contents(self::$cacheDirectory.$documentation.'.json'));
+        if ($data === NULL) {
+            unlink(self::$cacheDirectory.$documentation.'.json');
+        }
+
         $entries = $data->entries;
 
         $found = array();
