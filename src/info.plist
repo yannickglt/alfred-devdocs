@@ -1,12 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
 	<string></string>
 	<key>connections</key>
 	<dict>
-		<key>addalltask</key>
+		<key>nuketaskkeyword</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>nuketask</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>nuketask</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -28,436 +38,18 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>addalltask</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>shownotificationwhencomplete</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>addtask</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>dotaskbasedoncommand</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>angular</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>backbone</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>c</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>chai</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>coffeescript</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>cordova</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>cpp</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>css</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>d3</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>dom</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>dom_events</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>dotaskbasedoncommand</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>shownotificationwhencomplete</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>ember</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>express</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>git</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>go</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>grunt</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>haskell</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>html</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>http</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>javascript</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>jquery</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>jquerymobile</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>jqueryui</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>knockout</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>laravel</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>less</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>lodash</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>maxcdn</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>moment</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>node</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>nuketask</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>shownotificationwhencomplete</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>nuketaskkeyword</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>nuketask</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>php</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>postgresql</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>python</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>rails</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>redis</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>output</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>refreshtask</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -479,7 +71,29 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>requirejs</key>
+		<key>refreshtask</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>dotaskbasedoncommand</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>dotaskbasedoncommand</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>shownotificationwhencomplete</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>angular</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -490,7 +104,7 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>ruby</key>
+				<key>coffeescript</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -501,7 +115,7 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>sass</key>
+				<key>css</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -512,7 +126,7 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>sinon</key>
+				<key>d3</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -523,7 +137,7 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>underscore</key>
+				<key>dom</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -534,7 +148,7 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>yii</key>
+				<key>dom_events</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -545,13 +159,398 @@
 				<string></string>
 			</dict>
 		</array>
-	</dict>
+				<key>git</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>html</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>http</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>javascript</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>jquery</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>jqueryui</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>lodash</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>php</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>sass</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>backbone</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>c</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>cpp</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>chai</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>cordova</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>ember</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>express</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>go</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>grunt</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>haskell</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>jquerymobile</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>knockout</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>laravel</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>less</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>maxcdn</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>moment</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>node</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>postgresql</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>python</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>redis</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>requirejs</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>ruby</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>rails</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>sinon</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>underscore</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+				<key>yii</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+			</dict>
 	<key>createdby</key>
 	<string>Yannick Galatol</string>
 	<key>description</key>
 	<string></string>
 	<key>disabled</key>
-	<true/>
+	<false/>
 	<key>name</key>
 	<string>devdocs</string>
 	<key>objects</key>
@@ -590,20 +589,16 @@ require_once("scripts/devdocs.php");</string>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
-				<string>doc</string>
-				<key>runningsubtext</key>
-				<string>Searching for "{query}"</string>
+				<string>cdoc:list</string>
 				<key>script</key>
-				<string>$query = "{query}";
-require_once("scripts/devdocs.php");</string>
-				<key>subtext</key>
-				<string>Search for "{query}"</string>
+				<string>$query = "list {query}";
+require_once("scripts/conf.php");</string>
 				<key>title</key>
-				<string>DevDocs</string>
+				<string>List available docs on DevDocs workflow</string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>
@@ -612,7 +607,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>doc</string>
+			<string>listtask</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -712,6 +707,53 @@ require_once("scripts/conf.php");</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>output</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>doc</string>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+require_once("scripts/devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for "{query}"</string>
+				<key>title</key>
+				<string>DevDocs</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>doc</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -738,26 +780,18 @@ require_once("scripts/conf.php");</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
 				<key>escaping</key>
 				<integer>127</integer>
-				<key>keyword</key>
-				<string>cdoc:list</string>
 				<key>script</key>
-				<string>$query = "list {query}";
+				<string>$query = "addAll";
 require_once("scripts/conf.php");</string>
-				<key>title</key>
-				<string>List available docs on DevDocs workflow</string>
 				<key>type</key>
 				<integer>1</integer>
-				<key>withspace</key>
-				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>listtask</string>
+			<string>addalltask</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -786,7 +820,7 @@ require_once("scripts/conf.php");</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>$query = "addAll";
+				<string>$query = "nuke";
 require_once("scripts/conf.php");</string>
 				<key>type</key>
 				<integer>1</integer>
@@ -794,7 +828,7 @@ require_once("scripts/conf.php");</string>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>addalltask</string>
+			<string>nuketask</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -817,25 +851,7 @@ require_once("scripts/conf.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>$query = "nuke";
-require_once("scripts/conf.php");</string>
-				<key>type</key>
-				<integer>1</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>nuketask</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -866,24 +882,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>output</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -914,7 +913,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -945,7 +944,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -976,7 +975,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1007,7 +1006,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1038,7 +1037,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1069,7 +1068,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1100,7 +1099,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1131,7 +1130,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1162,7 +1161,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1193,7 +1192,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1224,7 +1223,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1255,7 +1254,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1286,7 +1285,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1317,7 +1316,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1348,7 +1347,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1379,7 +1378,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1410,7 +1409,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1441,7 +1440,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1472,7 +1471,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1503,7 +1502,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1534,7 +1533,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1565,7 +1564,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1596,7 +1595,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1627,7 +1626,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1658,7 +1657,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1689,7 +1688,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1720,7 +1719,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1751,7 +1750,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1782,7 +1781,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1813,7 +1812,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1844,7 +1843,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1875,7 +1874,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1906,7 +1905,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1937,7 +1936,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1968,7 +1967,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -1999,7 +1998,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -2030,7 +2029,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -2061,7 +2060,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -2092,7 +2091,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
+				<dict>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
@@ -2123,277 +2122,277 @@ require_once("scripts/devdocs.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-	</array>
+			</array>
 	<key>uidata</key>
 	<dict>
-		<key>addalltask</key>
+		<key>nuketaskkeyword</key>
 		<dict>
 			<key>ypos</key>
-			<real>510</real>
-		</dict>
-		<key>addalltaskkeyword</key>
-		<dict>
-			<key>ypos</key>
-			<real>510</real>
-		</dict>
-		<key>addtask</key>
-		<dict>
-			<key>ypos</key>
-			<real>110</real>
-		</dict>
-		<key>angular</key>
-		<dict>
-			<key>ypos</key>
-			<real>720</real>
-		</dict>
-		<key>backbone</key>
-		<dict>
-			<key>ypos</key>
-			<real>2220</real>
-		</dict>
-		<key>c</key>
-		<dict>
-			<key>ypos</key>
-			<real>2320</real>
-		</dict>
-		<key>chai</key>
-		<dict>
-			<key>ypos</key>
-			<real>2520</real>
-		</dict>
-		<key>coffeescript</key>
-		<dict>
-			<key>ypos</key>
-			<real>820</real>
-		</dict>
-		<key>cordova</key>
-		<dict>
-			<key>ypos</key>
-			<real>2620</real>
-		</dict>
-		<key>cpp</key>
-		<dict>
-			<key>ypos</key>
-			<real>2420</real>
-		</dict>
-		<key>css</key>
-		<dict>
-			<key>ypos</key>
-			<real>920</real>
-		</dict>
-		<key>d3</key>
-		<dict>
-			<key>ypos</key>
-			<real>1020</real>
-		</dict>
-		<key>doc</key>
-		<dict>
-			<key>ypos</key>
-			<real>10</real>
-		</dict>
-		<key>docglobal</key>
-		<dict/>
-		<key>dom</key>
-		<dict>
-			<key>ypos</key>
-			<real>1120</real>
-		</dict>
-		<key>dom_events</key>
-		<dict>
-			<key>ypos</key>
-			<real>1220</real>
-		</dict>
-		<key>dotaskbasedoncommand</key>
-		<dict>
-			<key>ypos</key>
-			<real>110</real>
-		</dict>
-		<key>ember</key>
-		<dict>
-			<key>ypos</key>
-			<real>2720</real>
-		</dict>
-		<key>express</key>
-		<dict>
-			<key>ypos</key>
-			<real>2820</real>
-		</dict>
-		<key>git</key>
-		<dict>
-			<key>ypos</key>
-			<real>1320</real>
-		</dict>
-		<key>go</key>
-		<dict>
-			<key>ypos</key>
-			<real>2920</real>
-		</dict>
-		<key>grunt</key>
-		<dict>
-			<key>ypos</key>
-			<real>3020</real>
-		</dict>
-		<key>haskell</key>
-		<dict>
-			<key>ypos</key>
-			<real>3120</real>
-		</dict>
-		<key>html</key>
-		<dict>
-			<key>ypos</key>
-			<real>1420</real>
-		</dict>
-		<key>http</key>
-		<dict>
-			<key>ypos</key>
-			<real>1520</real>
-		</dict>
-		<key>javascript</key>
-		<dict>
-			<key>ypos</key>
-			<real>1620</real>
-		</dict>
-		<key>jquery</key>
-		<dict>
-			<key>ypos</key>
-			<real>1720</real>
-		</dict>
-		<key>jquerymobile</key>
-		<dict>
-			<key>ypos</key>
-			<real>3220</real>
-		</dict>
-		<key>jqueryui</key>
-		<dict>
-			<key>ypos</key>
-			<real>1820</real>
-		</dict>
-		<key>knockout</key>
-		<dict>
-			<key>ypos</key>
-			<real>3320</real>
-		</dict>
-		<key>laravel</key>
-		<dict>
-			<key>ypos</key>
-			<real>3420</real>
-		</dict>
-		<key>less</key>
-		<dict>
-			<key>ypos</key>
-			<real>3520</real>
-		</dict>
-		<key>listtask</key>
-		<dict>
-			<key>ypos</key>
-			<real>410</real>
-		</dict>
-		<key>lodash</key>
-		<dict>
-			<key>ypos</key>
-			<real>1920</real>
-		</dict>
-		<key>maxcdn</key>
-		<dict>
-			<key>ypos</key>
-			<real>3620</real>
-		</dict>
-		<key>moment</key>
-		<dict>
-			<key>ypos</key>
-			<real>3720</real>
-		</dict>
-		<key>node</key>
-		<dict>
-			<key>ypos</key>
-			<real>3820</real>
+			<real>610</real>
 		</dict>
 		<key>nuketask</key>
 		<dict>
 			<key>ypos</key>
 			<real>610</real>
 		</dict>
-		<key>nuketaskkeyword</key>
+		<key>addalltaskkeyword</key>
 		<dict>
 			<key>ypos</key>
-			<real>610</real>
+			<real>510</real>
+		</dict>
+		<key>addalltask</key>
+		<dict>
+			<key>ypos</key>
+			<real>510</real>
+		</dict>
+		<key>docglobal</key>
+		<dict/>
+		<key>addtask</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>doc</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+		<key>dotaskbasedoncommand</key>
+		<dict>
+			<key>ypos</key>
+			<real>110</real>
+		</dict>
+		<key>listtask</key>
+		<dict>
+			<key>ypos</key>
+			<real>410</real>
 		</dict>
 		<key>output</key>
 		<dict>
 			<key>ypos</key>
 			<real>720</real>
 		</dict>
-		<key>php</key>
+		<key>removetask</key>
 		<dict>
 			<key>ypos</key>
-			<real>2020</real>
-		</dict>
-		<key>postgresql</key>
-		<dict>
-			<key>ypos</key>
-			<real>3920</real>
-		</dict>
-		<key>python</key>
-		<dict>
-			<key>ypos</key>
-			<real>4020</real>
-		</dict>
-		<key>rails</key>
-		<dict>
-			<key>ypos</key>
-			<real>4420</real>
-		</dict>
-		<key>redis</key>
-		<dict>
-			<key>ypos</key>
-			<real>4120</real>
+			<real>210</real>
 		</dict>
 		<key>refreshtask</key>
 		<dict>
 			<key>ypos</key>
 			<real>310</real>
 		</dict>
-		<key>removetask</key>
-		<dict>
-			<key>ypos</key>
-			<real>210</real>
-		</dict>
-		<key>requirejs</key>
-		<dict>
-			<key>ypos</key>
-			<real>4220</real>
-		</dict>
-		<key>ruby</key>
-		<dict>
-			<key>ypos</key>
-			<real>4320</real>
-		</dict>
-		<key>sass</key>
-		<dict>
-			<key>ypos</key>
-			<real>2120</real>
-		</dict>
 		<key>shownotificationwhencomplete</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
-		<key>sinon</key>
+						<key>angular</key>
+		<dict>
+			<key>ypos</key>
+			<real>720</real>
+		</dict>
+				<key>coffeescript</key>
+		<dict>
+			<key>ypos</key>
+			<real>820</real>
+		</dict>
+				<key>css</key>
+		<dict>
+			<key>ypos</key>
+			<real>920</real>
+		</dict>
+				<key>d3</key>
+		<dict>
+			<key>ypos</key>
+			<real>1020</real>
+		</dict>
+				<key>dom</key>
+		<dict>
+			<key>ypos</key>
+			<real>1120</real>
+		</dict>
+				<key>dom_events</key>
+		<dict>
+			<key>ypos</key>
+			<real>1220</real>
+		</dict>
+				<key>git</key>
+		<dict>
+			<key>ypos</key>
+			<real>1320</real>
+		</dict>
+				<key>html</key>
+		<dict>
+			<key>ypos</key>
+			<real>1420</real>
+		</dict>
+				<key>http</key>
+		<dict>
+			<key>ypos</key>
+			<real>1520</real>
+		</dict>
+				<key>javascript</key>
+		<dict>
+			<key>ypos</key>
+			<real>1620</real>
+		</dict>
+				<key>jquery</key>
+		<dict>
+			<key>ypos</key>
+			<real>1720</real>
+		</dict>
+				<key>jqueryui</key>
+		<dict>
+			<key>ypos</key>
+			<real>1820</real>
+		</dict>
+				<key>lodash</key>
+		<dict>
+			<key>ypos</key>
+			<real>1920</real>
+		</dict>
+				<key>php</key>
+		<dict>
+			<key>ypos</key>
+			<real>2020</real>
+		</dict>
+				<key>sass</key>
+		<dict>
+			<key>ypos</key>
+			<real>2120</real>
+		</dict>
+				<key>backbone</key>
+		<dict>
+			<key>ypos</key>
+			<real>2220</real>
+		</dict>
+				<key>c</key>
+		<dict>
+			<key>ypos</key>
+			<real>2320</real>
+		</dict>
+				<key>cpp</key>
+		<dict>
+			<key>ypos</key>
+			<real>2420</real>
+		</dict>
+				<key>chai</key>
+		<dict>
+			<key>ypos</key>
+			<real>2520</real>
+		</dict>
+				<key>cordova</key>
+		<dict>
+			<key>ypos</key>
+			<real>2620</real>
+		</dict>
+				<key>ember</key>
+		<dict>
+			<key>ypos</key>
+			<real>2720</real>
+		</dict>
+				<key>express</key>
+		<dict>
+			<key>ypos</key>
+			<real>2820</real>
+		</dict>
+				<key>go</key>
+		<dict>
+			<key>ypos</key>
+			<real>2920</real>
+		</dict>
+				<key>grunt</key>
+		<dict>
+			<key>ypos</key>
+			<real>3020</real>
+		</dict>
+				<key>haskell</key>
+		<dict>
+			<key>ypos</key>
+			<real>3120</real>
+		</dict>
+				<key>jquerymobile</key>
+		<dict>
+			<key>ypos</key>
+			<real>3220</real>
+		</dict>
+				<key>knockout</key>
+		<dict>
+			<key>ypos</key>
+			<real>3320</real>
+		</dict>
+				<key>laravel</key>
+		<dict>
+			<key>ypos</key>
+			<real>3420</real>
+		</dict>
+				<key>less</key>
+		<dict>
+			<key>ypos</key>
+			<real>3520</real>
+		</dict>
+				<key>maxcdn</key>
+		<dict>
+			<key>ypos</key>
+			<real>3620</real>
+		</dict>
+				<key>moment</key>
+		<dict>
+			<key>ypos</key>
+			<real>3720</real>
+		</dict>
+				<key>node</key>
+		<dict>
+			<key>ypos</key>
+			<real>3820</real>
+		</dict>
+				<key>postgresql</key>
+		<dict>
+			<key>ypos</key>
+			<real>3920</real>
+		</dict>
+				<key>python</key>
+		<dict>
+			<key>ypos</key>
+			<real>4020</real>
+		</dict>
+				<key>redis</key>
+		<dict>
+			<key>ypos</key>
+			<real>4120</real>
+		</dict>
+				<key>requirejs</key>
+		<dict>
+			<key>ypos</key>
+			<real>4220</real>
+		</dict>
+				<key>ruby</key>
+		<dict>
+			<key>ypos</key>
+			<real>4320</real>
+		</dict>
+				<key>rails</key>
+		<dict>
+			<key>ypos</key>
+			<real>4420</real>
+		</dict>
+				<key>sinon</key>
 		<dict>
 			<key>ypos</key>
 			<real>4520</real>
 		</dict>
-		<key>underscore</key>
+				<key>underscore</key>
 		<dict>
 			<key>ypos</key>
 			<real>4620</real>
 		</dict>
-		<key>yii</key>
+				<key>yii</key>
 		<dict>
 			<key>ypos</key>
 			<real>4720</real>
 		</dict>
-	</dict>
+			</dict>
 	<key>webaddress</key>
 	<string></string>
 </dict>

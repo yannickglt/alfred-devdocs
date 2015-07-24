@@ -170,7 +170,7 @@ class DevDocsConf {
 
     private function refreshCmd(){
         $updateAll = ($this->currentCmd[1] === 'all');
-        $docToUpdate = ($updateAll)? array($this->currentCmd[1] => $this->currentConfig[$this->currentCmd[1]]) : $this->currentConfig;
+        $docToUpdate = $updateAll ? $this->currentConfig : array($this->currentCmd[1] => $this->currentConfig[$this->currentCmd[1]]);
     	foreach ($docToUpdate as $docName => $key) {
             file_put_contents(
             	$this->rootPath."/cache/".$key.".json", 
