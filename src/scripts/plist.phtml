@@ -95,7 +95,7 @@
 			</dict>
 		</array>
 		<?php foreach ($documentations as $doc): ?>
-		<key><?= $doc ?></key>
+		<key><?= $doc->slug ?></key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -414,7 +414,7 @@ require_once("scripts/conf.php");</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<?php foreach ($documentations as $title => $doc): ?>
+		<?php foreach ($documentations as $doc): ?>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -423,17 +423,17 @@ require_once("scripts/conf.php");</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
-				<string><?= $doc ?></string>
+				<string><?= $doc->slug ?></string>
 				<key>runningsubtext</key>
 				<string>Searching for "{query}"</string>
 				<key>script</key>
 				<string>$query = "{query}";
-$documentation = '<?= $doc ?>';
+$documentation = '<?= $doc->slug ?>';
 require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
-				<string>Search for <?= $title ?> "{query}"</string>
+				<string>Search for <?= $doc->fullName ?> "{query}"</string>
 				<key>title</key>
-				<string>DevDocs - <?= $title ?></string>
+				<string>DevDocs - <?= $doc->fullName ?></string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>
@@ -442,7 +442,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string><?= $doc ?></string>
+			<string><?= $doc->slug ?></string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -514,7 +514,7 @@ require_once("scripts/devdocs.php");</string>
 		</dict>
 		<?php $i = 1 ?>
 		<?php foreach ($documentations as $doc): ?>
-		<key><?= $doc ?></key>
+		<key><?= $doc->slug ?></key>
 		<dict>
 			<key>ypos</key>
 			<real><?= ($i++ * 100) + 620 ?></real>
