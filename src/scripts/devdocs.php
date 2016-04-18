@@ -74,7 +74,12 @@ class DevDocs {
             $value = strtolower(trim($result->name));
             $description = strtolower(utf8_decode(strip_tags($result->type)));
             
-            if (strpos($value, $query) === 0) {
+            if (empty($query)) {
+                $found[$value] = true;
+                $result->documentation = $documentation;
+                $this->results[0][] = $result;
+            }
+            else if (strpos($value, $query) === 0) {
                 if (!isset($found[$value])) {
                     $found[$value] = true;
                     $result->documentation = $documentation;
@@ -102,7 +107,7 @@ class DevDocs {
     private function render () {
         foreach ($this->results as $level => $results) {
             foreach ($results as $result) {
-                $this->workflows->result( $result->name, self::$baseUrl.$result->documentation.'/'.$result->path, $result->name.' ('.$result->type.')', $result->path, $result->documentation.'.png' );
+                $this->workflows->result( $result->name, self::$baseUrl.$result->documentation.'/'.$result->path, $result->name.' ('.$result->type.')', $result->path, $result->documentation.'.png', 'yes',  $result->name);
             }
         }
         echo $this->workflows->toxml();

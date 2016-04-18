@@ -1,4 +1,4 @@
-<?= '<?xml version="1.0" encoding="UTF-8"?>' ?>
+<?= '<?xml version="1.0" encoding="UTF-8"?>'.PHP_EOL ?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -458,7 +458,7 @@ require_once("scripts/conf.php");</string>
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
@@ -581,11 +581,11 @@ require_once("scripts/devdocs.php");</string>
 		<key><?= $doc->slug ?></key>
 		<dict>
 			<key>ypos</key>
-			<real><?= ($i++ * 100) + 620 ?></real>
+			<real><?= ($i++ * 110) + 620 ?></real>
 		</dict>
 <?php endforeach; ?>
 	</dict>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/yannickglt/alfred-devdocs</string>
 </dict>
 </plist>

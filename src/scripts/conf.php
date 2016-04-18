@@ -87,7 +87,6 @@ class DevDocsConf {
 			include $rootPath.'/scripts/plist.phtml';
 			$fileContent = ob_get_contents();
 			ob_end_clean();
-
 			file_put_contents($rootPath.'/info.plist', $fileContent);
     	};
     	$buildPlist($this->rootPath, $this->currentConfig);
@@ -130,7 +129,9 @@ class DevDocsConf {
                 "add ".$doc->slug,
                 $doc->fullName,
                 '',
-                $this->getIcon($doc)
+                $this->getIcon($doc),
+                'yes',
+                $doc->slug
             );
         }
         $this->flushToAlfred();
@@ -155,7 +156,9 @@ class DevDocsConf {
                 "remove ".$doc->slug,
                 $doc->fullName,
                 '',
-                $this->getIcon($doc)
+                $this->getIcon($doc),
+                'yes',
+                $doc->slug
             );
         }
         $this->flushToAlfred();
@@ -183,7 +186,9 @@ class DevDocsConf {
                 "refresh ".$doc->slug,
                 $doc->fullName,
                 '',
-                $this->getIcon($doc)
+                $this->getIcon($doc),
+                'yes',
+                $doc->slug
             );
         }
         $this->flushToAlfred();
@@ -210,7 +215,9 @@ class DevDocsConf {
             	json_encode($conf),
             	$doc->fullName,
             	(isset($this->currentConfig[$doc->slug]))? 'Already in your doc list' : '',
-            	$this->getIcon($doc)
+            	$this->getIcon($doc),
+                'yes',
+                $doc->slug
             );
         }
         $this->flushToAlfred();
