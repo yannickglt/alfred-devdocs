@@ -12,7 +12,6 @@
 namespace CFPropertyList;
 require_once 'vendor/autoload.php';
 require_once 'workflows.php';
-require_once 'documentations.php';
 
 class DevDocsConf {
 
@@ -29,13 +28,14 @@ class DevDocsConf {
 
     public function __construct($query, $documentations) {
 		$this->query          = $query;
-		$this->documentations = $documentations;
-		$this->workflows      = new \Workflows();
+        $this->workflows      = new \Workflows();
 
         $this->parseCommand($query);
         $this->buildRootPath();
         $this->openPlist();
+        $this->setDocumentations();
         $this->setCurrentConfig();
+        
 
         if (method_exists($this, $this->currentCmd[0].'Cmd')) {
         	$this->{$this->currentCmd[0].'Cmd'}();
@@ -63,17 +63,18 @@ class DevDocsConf {
     }
 
     private function buildRootPath(){
-    	$this->rootPath = str_replace('/scripts', '', $this->workflows->path());
+        $this->rootPath = str_replace('/scripts', '', $this->workflows->path());
     }
 
     private function setCurrentConfig(){
-    	$flippedDocumentations = array_flip($this->documentations);
     	foreach ($this->pList['connections'] as $key => $value) {
-    		if(array_key_exists($key, $flippedDocumentations)){
-    			$this->currentConfig[$flippedDocumentations[$key]] = $key;
+    		if(array_key_exists($key, $this->documentations)){
+    			$this->currentConfig[$key] = $this->documentations[$key];
     		}
     	}
-        asort($this->currentConfig, SORT_STRING | SORT_FLAG_CASE);
+        uasort($this->currentConfig, function ($elementA, $elementB) {
+            return $elementA->slug >= $elementB->slug;
+        });
     }
 
     private function flushToAlfred(){
@@ -86,55 +87,78 @@ class DevDocsConf {
 			include $rootPath.'/scripts/plist.phtml';
 			$fileContent = ob_get_contents();
 			ob_end_clean();
-
 			file_put_contents($rootPath.'/info.plist', $fileContent);
     	};
     	$buildPlist($this->rootPath, $this->currentConfig);
     }
 
+    private function setDocumentations() {
+        $docFile = $this->rootPath.'/cache/docs.json';
+         // Keep the docs in cache during 7 days
+        if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7)) {
+            file_put_contents($docFile, file_get_contents('http://devdocs.io/docs/docs.json'));
+        }
+        $docs = json_decode(file_get_contents($docFile));
+        $this->documentations = array();
+        foreach ($docs as $doc) {
+            $doc->fullName = $doc->name . ($doc->version ? ' '.$doc->version : '');
+            $this->documentations[$doc->slug] = $doc;
+        }
+    }
+
     private function filter($search, $collection){
         $filtered = array_filter(
             $collection, 
-            function($key) use ($search){
-                return ($search !== '')? stripos($key, $search) !== false : true;
+            function($element) use ($search){
+                return ($search !== '')? stripos($element->slug, $search) !== false : true;
             }
         );
-        asort($filtered, SORT_STRING | SORT_FLAG_CASE);
+        uasort($filtered, function ($elementA, $elementB) {
+            return $elementA->slug >= $elementB->slug;
+        });
         return $filtered;
     }
 
     private function selectAddCmd(){
         $search         = (isset($this->currentCmd[1]))? $this->currentCmd[1] : '';
-        $docsAvailables = array_diff($this->documentations, $this->currentConfig);
+        $docsAvailables = array_diff_key($this->documentations, $this->currentConfig);
         $docsAvailables = $this->filter($search, $docsAvailables);
-        foreach ($docsAvailables as $docName => $key) {
+        foreach ($docsAvailables as $doc) {
             $this->workflows->result( 
-                $key,
-                "add ".$docName,
-                $docName,
+                $doc->slug,
+                "add ".$doc->slug,
+                $doc->fullName,
                 '',
-                $this->rootPath.'/'.$key.'.png'
+                $this->getIcon($doc),
+                'yes',
+                $doc->slug
             );
         }
         $this->flushToAlfred();
     }
 
     private function addCmd(){
-    	$this->currentConfig[$this->currentCmd[1]] = $this->documentations[$this->currentCmd[1]];
-    	$this->regeneratePlist();
+        $doc = $this->documentations[$this->currentCmd[1]];
+        $this->currentConfig[$this->currentCmd[1]] = $doc;
+        $this->regeneratePlist();
+        if (!file_exists($this->rootPath.'/'.$doc->slug.'.png')) {
+            @copy($this->rootPath.'/'.$doc->type.'.png', $this->rootPath.'/'.$doc->slug.'.png');
+        }
         echo $this->currentCmd[1].' added !';
     }
 
     private function selectRemoveCmd(){
         $search         = (isset($this->currentCmd[1]))? $this->currentCmd[1] : '';
         $docsAvailables = $this->filter($search, $this->currentConfig);
-        foreach ($docsAvailables as $docName => $key) {
+        foreach ($docsAvailables as $doc) {
             $this->workflows->result( 
-                $key,
-                "remove ".$docName,
-                $docName,
+                $doc->slug,
+                "remove ".$doc->slug,
+                $doc->fullName,
                 '',
-                $this->rootPath.'/'.$key.'.png'
+                $this->getIcon($doc),
+                'yes',
+                $doc->slug
             );
         }
         $this->flushToAlfred();
@@ -156,13 +180,15 @@ class DevDocsConf {
             '',
             $this->rootPath.'/all.png'
         );
-        foreach ($docsAvailables as $docName => $key) {
+        foreach ($docsAvailables as $doc) {
             $this->workflows->result( 
-                $key,
-                "refresh ".$docName,
-                $docName,
+                $doc->slug,
+                "refresh ".$doc->slug,
+                $doc->fullName,
                 '',
-                $this->rootPath.'/'.$key.'.png'
+                $this->getIcon($doc),
+                'yes',
+                $doc->slug
             );
         }
         $this->flushToAlfred();
@@ -171,10 +197,10 @@ class DevDocsConf {
     private function refreshCmd(){
         $updateAll = ($this->currentCmd[1] === 'all');
         $docToUpdate = $updateAll ? $this->currentConfig : array($this->currentCmd[1] => $this->currentConfig[$this->currentCmd[1]]);
-    	foreach ($docToUpdate as $docName => $key) {
+    	foreach ($docToUpdate as $doc) {
             file_put_contents(
-            	$this->rootPath."/cache/".$key.".json", 
-            	file_get_contents("http://docs.devdocs.io/".$key."/index.json")
+            	$this->rootPath."/cache/".$doc->slug.".json", 
+            	file_get_contents("http://docs.devdocs.io/".$doc->slug."/index.json")
             );
     	}
         echo (($updateAll)? 'All data docs': $this->currentCmd[1].' doc').' updated !';
@@ -183,16 +209,26 @@ class DevDocsConf {
     private function listCmd(){
         $search = (isset($this->currentCmd[1]))? $this->currentCmd[1] : '';
         $docs   = $this->filter($search, $this->documentations);
-    	foreach ($docs as $docName => $key) {
+    	foreach ($docs as $doc) {
             $this->workflows->result( 
-            	$key,
+            	$doc->slug,
             	json_encode($conf),
-            	$docName,
-            	(isset($this->currentConfig[$docName]))? 'Already in your doc list' : '',
-            	$this->rootPath.'/'.$key.'.png'
+            	$doc->fullName,
+            	(isset($this->currentConfig[$doc->slug]))? 'Already in your doc list' : '',
+            	$this->getIcon($doc),
+                'yes',
+                $doc->slug
             );
         }
         $this->flushToAlfred();
+    }
+
+    private function getIcon($doc) {
+        if (file_exists($this->rootPath.'/'.$doc->slug.'.png')) {
+            return $this->rootPath.'/'.$doc->slug.'.png';
+        } else {
+            return $this->rootPath.'/'.$doc->type.'.png';
+        }
     }
 
     private function addAllCmd(){

@@ -18,8 +18,8 @@ class DevDocs {
             2 => array()
         );
 
+        $documentations = $this->getDocumentations();
         if (!isset($doc) || empty($doc)) {
-            include 'documentations.php';
             foreach ($documentations as $documentation) {
                 $this->checkCache($documentation);
             }
@@ -31,6 +31,21 @@ class DevDocs {
             $this->processDocumentation($doc, $query);
         }
         $this->render();
+    }
+
+    private function getDocumentations() {
+        $docFile = $this->cacheDirectory.'docs.json';
+         // Keep the docs in cache during 7 days
+        if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7)) {
+            file_put_contents($docFile, file_get_contents('http://devdocs.io/docs/docs.json'));
+        }
+        $docs = json_decode(file_get_contents($docFile));
+        $documentations = array();
+        foreach ($docs as $doc) {
+            $doc->fullName = $doc->name . ($doc->version ? ' '.$doc->version : '');
+            $documentations[$doc->slug] = $doc;
+        }
+        return $documentations;
     }
 
     private function checkCache ($documentation) {
@@ -59,7 +74,12 @@ class DevDocs {
             $value = strtolower(trim($result->name));
             $description = strtolower(utf8_decode(strip_tags($result->type)));
             
-            if (strpos($value, $query) === 0) {
+            if (empty($query)) {
+                $found[$value] = true;
+                $result->documentation = $documentation;
+                $this->results[0][] = $result;
+            }
+            else if (strpos($value, $query) === 0) {
                 if (!isset($found[$value])) {
                     $found[$value] = true;
                     $result->documentation = $documentation;
@@ -87,7 +107,7 @@ class DevDocs {
     private function render () {
         foreach ($this->results as $level => $results) {
             foreach ($results as $result) {
-                $this->workflows->result( $result->name, self::$baseUrl.$result->documentation.'/'.$result->path, $result->name.' ('.$result->type.')', $result->path, $result->documentation.'.png' );
+                $this->workflows->result( $result->name, self::$baseUrl.$result->documentation.'/'.$result->path, $result->name.' ('.$result->type.')', $result->path, $result->documentation.'.png', 'yes',  $result->name);
             }
         }
         echo $this->workflows->toxml();

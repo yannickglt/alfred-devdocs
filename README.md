@@ -36,7 +36,4 @@ By default, all docs are present in this workflow but maybe you dont need all do
 - cdoc:refresh = Refresh cache for a doc if specified or all if you want.
 
 # Install
-Use the packaged workflow [DevDocs.alfredworkflow](https://github.com/yannickglt/alfred-devdocs/blob/master/DevDocs.alfredworkflow?raw=true) or via curl:
-```sh
-$ curl -L -O https://github.com/yannickglt/alfred-devdocs/archive/v1.0.1.zip ; unzip -o v1.0.1.zip -d "$HOME/Library/Application Support/Alfred 2/Alfred.alfredpreferences/workflows/" ; rm -f v1.0.1.zip
-```
+Use the packaged workflow [DevDocs.alfredworkflow](https://github.com/packal/repository/raw/master/com.yannickglt.alfred2.devdocs/devdocs.alfredworkflow) from packal.
