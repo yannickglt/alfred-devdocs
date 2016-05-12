@@ -97,7 +97,7 @@
 			</dict>
 		</array>
 <?php foreach ($documentations as $doc): ?>
-		<key><?= $doc->slug ?></key>
+		<key><?= htmlspecialchars($doc->slug) ?></key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -462,7 +462,7 @@ require_once("scripts/conf.php");</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
-				<string><?= $doc->slug ?></string>
+				<string><?= htmlspecialchars($doc->slug) ?></string>
 				<key>queuedelaycustom</key>
 				<integer>1</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -475,12 +475,12 @@ require_once("scripts/conf.php");</string>
 				<string>Searching for "{query}"</string>
 				<key>script</key>
 				<string>$query = "{query}";
-$documentation = '<?= $doc->slug ?>';
+$documentation = '<?= htmlspecialchars($doc->slug) ?>';
 require_once("scripts/devdocs.php");</string>
 				<key>subtext</key>
-				<string>Search for <?= $doc->fullName ?> "{query}"</string>
+				<string>Search for <?= htmlspecialchars($doc->fullName) ?> "{query}"</string>
 				<key>title</key>
-				<string>DevDocs - <?= $doc->fullName ?></string>
+				<string>DevDocs - <?= htmlspecialchars($doc->fullName) ?></string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>
@@ -489,7 +489,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string><?= $doc->slug ?></string>
+			<string><?= htmlspecialchars($doc->slug) ?></string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -578,7 +578,7 @@ require_once("scripts/devdocs.php");</string>
 		</dict>
 <?php $i = 1 ?>
 <?php foreach ($documentations as $doc): ?>
-		<key><?= $doc->slug ?></key>
+		<key><?= htmlspecialchars($doc->slug) ?></key>
 		<dict>
 			<key>ypos</key>
 			<real><?= ($i++ * 110) + 620 ?></real>
