@@ -38,8 +38,17 @@ class Workflows {
 			$this->bundle = $bundleid;
 		endif;
 
-		$this->cache = $this->home. "/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/".$this->bundle;
-		$this->data  = $this->home. "/Library/Application Support/Alfred 2/Workflow Data/".$this->bundle;
+		if (isset($_SERVER['alfred_workflow_cache'])) {
+			$this->cache = $_SERVER['alfred_workflow_cache'];
+		} else {
+			$this->cache = $this->home. "/Library/Caches/com.runningwithcrayons.Alfred-2/Workflow Data/".$this->bundle;
+		}
+
+		if (isset($_SERVER['alfred_workflow_data'])) {
+			$this->data  = $_SERVER['alfred_workflow_data'];
+		} else {
+			$this->data  = $this->home. "/Library/Application Support/Alfred 2/Workflow Data/".$this->bundle;
+		}
 
 		if ( !file_exists( $this->cache ) ):
 			exec("mkdir '".$this->cache."'");

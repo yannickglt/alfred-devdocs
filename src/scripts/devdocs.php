@@ -1,5 +1,10 @@
 <?php
 
+ini_set('memory_limit', '-1');
+
+use CFPropertyList\CFPropertyList;
+
+require_once 'vendor/autoload.php';
 require_once 'workflows.php';
 
 class DevDocs {
@@ -20,11 +25,13 @@ class DevDocs {
 
         $documentations = $this->getDocumentations();
         if (!isset($doc) || empty($doc)) {
-            foreach ($documentations as $documentation) {
-                $this->checkCache($documentation);
-            }
-            foreach ($documentations as $documentation) {
-                $this->processDocumentation($documentation, $query);
+            $rootPath = str_replace('/scripts', '', $this->workflows->path());
+            $pList = (new CFPropertyList($rootPath.'/info.plist'))->toArray();
+            foreach ($pList['connections'] as $key => $value) {
+                if (array_key_exists($key, $documentations)) {
+                    $this->checkCache($key);
+                    $this->processDocumentation($key, $query);
+                }
             }
         } else {
             $this->checkCache($doc);
