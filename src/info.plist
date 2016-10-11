@@ -110,44 +110,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>keyword</key>
-				<string>doc</string>
-				<key>queuedelaycustom</key>
-				<integer>1</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<false/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Searching for "{query}"</string>
-				<key>script</key>
-				<string>$query = "{query}";
-require_once("scripts/devdocs.php");</string>
-				<key>subtext</key>
-				<string>Search for "{query}"</string>
-				<key>title</key>
-				<string>DevDocs</string>
-				<key>type</key>
-				<integer>1</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>docglobal</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -480,8 +442,6 @@ require_once("scripts/conf.php");</string>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
-		<key>docglobal</key>
-		<dict/>
 		<key>dotaskbasedoncommand</key>
 		<dict>
 			<key>ypos</key>

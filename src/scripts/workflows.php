@@ -319,7 +319,7 @@ class Workflows {
 			return false;
 		endif;
 
-		$out = $out[0];
+		$out = is_array($out) && !empty($out) ? $out[0] : false;
 		return $out;											// Return item value
 	}
 
@@ -377,7 +377,7 @@ class Workflows {
 		exec('mdfind "'.$query.'"', $results);
 		return $results;
 	}
-	
+
 	public function delete( $a )
 	{
 		if ( file_exists( $a ) ):
@@ -390,7 +390,7 @@ class Workflows {
 			unlink($this->cache."/".$a);
 		endif;
 	}
-	
+
 	/**
 	* Description:
 	* Accepts data and a string file name to store data to local file as cache
@@ -446,7 +446,7 @@ class Workflows {
 		else:
 			return false;
 		endif;
-		
+
 		$out = file_get_contents( $a );
 		if ( !is_null( json_decode( $out ) ) ):
 			$out = json_decode( $out );
@@ -454,7 +454,7 @@ class Workflows {
 
 		return $out;
 	}
-	
+
 	public function filetime( $a )
 	{
 		if ( file_exists( $a ) ):
@@ -466,7 +466,7 @@ class Workflows {
 		elseif ( file_exists( $this->cache."/".$a ) ):
 			return filemtime($this->cache.'/'.$a);
 		endif;
-		
+
 		return false;
 	}
 
@@ -496,7 +496,7 @@ class Workflows {
 			'autocomplete' => $auto,
 			'type' => $type
 		);
-		
+
 		if ( is_null( $type ) ):
 			unset( $temp['type'] );
 		endif;

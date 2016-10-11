@@ -2,3 +2,5 @@ src/cache/*
 src/docs/*
 .DS_Store
 src/.DS_Store
+.idea
+docs.json
