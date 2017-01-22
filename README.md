@@ -1,7 +1,7 @@
 alfred-devdocs
 ==============
 
-Alfred workflow for devdocs.io documentations. 
+Alfred workflow for the amazing [devdocs.io](http://devdocs.io/) documentations. 
 
 # How to
 ## Find in a specific documentation
