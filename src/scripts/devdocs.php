@@ -49,9 +49,12 @@ class DevDocs {
     $docFile = self::$cacheDirectory . 'docs.json';
     // Keep the docs in cache during 7 days
     if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7)) {
-      file_put_contents($docFile, file_get_contents('http://devdocs.io/docs/docs.json'));
+      $docContent = file_get_contents('http://devdocs.io/docs/docs.json');
+      file_put_contents($docFile, $docContent);
+    } else {
+      $docContent = file_get_contents($docFile);
     }
-    $docs = json_decode(file_get_contents($docFile));
+    $docs = json_decode($docContent);
     $documentations = [];
     foreach ($docs as $doc) {
       $doc->fullName = $doc->name . (!empty($doc->version) ? ' ' . $doc->version : '');
