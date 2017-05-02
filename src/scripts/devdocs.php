@@ -49,7 +49,7 @@ class DevDocs {
     $docFile = self::$cacheDirectory . 'docs.json';
     // Keep the docs in cache during 7 days
     if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7)) {
-      $docContent = file_get_contents('http://devdocs.io/docs/docs.json');
+      $docContent = $this->workflows->fetch('http://devdocs.io/docs/docs.json');
       file_put_contents($docFile, $docContent);
     } else {
       $docContent = file_get_contents($docFile);

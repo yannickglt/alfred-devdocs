@@ -100,7 +100,7 @@ class DevDocsConf {
     $docFile = self::$cacheDirectory . 'docs.json';
     // Keep the docs in cache during 7 days
     if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7)) {
-      file_put_contents($docFile, file_get_contents('http://devdocs.io/docs/docs.json'));
+      file_put_contents($docFile, $this->workflows->fetch('http://devdocs.io/docs/docs.json'));
     }
     $docs = json_decode(file_get_contents($docFile));
     $this->documentations = [];
@@ -204,7 +204,7 @@ class DevDocsConf {
     foreach ($docToUpdate as $doc) {
       file_put_contents(
         self::$cacheDirectory . $doc->slug . '.json',
-        file_get_contents("http://docs.devdocs.io/" . $doc->slug . "/index.json")
+        $this->workflows->fetch('http://docs.devdocs.io/' . $doc->slug . '/index.json')
       );
     }
     echo (($updateAll) ? 'All data docs' : $this->currentCmd[1] . ' doc') . ' updated !';

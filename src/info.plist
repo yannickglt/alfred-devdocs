@@ -17,8 +17,6 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>vitoclose</key>
-				<false/>
 			</dict>
 		</array>
 		<key>addalltaskkeyword</key>
@@ -30,8 +28,6 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>vitoclose</key>
-				<false/>
 			</dict>
 		</array>
 		<key>addtask</key>
@@ -43,8 +39,6 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>vitoclose</key>
-				<false/>
 			</dict>
 		</array>
 		<key>doc</key>
@@ -69,8 +63,6 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>vitoclose</key>
-				<false/>
 			</dict>
 		</array>
 		<key>nuketask</key>
@@ -82,8 +74,6 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>vitoclose</key>
-				<false/>
 			</dict>
 		</array>
 		<key>nuketaskkeyword</key>
@@ -95,8 +85,6 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>vitoclose</key>
-				<false/>
 			</dict>
 		</array>
 		<key>refreshtask</key>
@@ -108,8 +96,6 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>vitoclose</key>
-				<false/>
 			</dict>
 		</array>
 		<key>removetask</key>
@@ -121,8 +107,17 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>vitoclose</key>
-				<false/>
+			</dict>
+		</array>
+		<key>react</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>output</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 			</dict>
 		</array>
 	</dict>
@@ -139,33 +134,16 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>output</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
 				<true/>
+				<key>output</key>
+				<integer>0</integer>
 				<key>removeextension</key>
 				<false/>
-				<key>text</key>
-				<string></string>
+				<key>sticky</key>
+				<false/>
 				<key>title</key>
 				<string>{query}</string>
 			</dict>
@@ -174,13 +152,11 @@
 			<key>uid</key>
 			<string>shownotificationwhencomplete</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -200,10 +176,6 @@
 				<key>script</key>
 				<string>$query = "{query}";
 require_once("scripts/devdocs.php");</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
 				<key>subtext</key>
 				<string>Search for "{query}"</string>
 				<key>title</key>
@@ -218,7 +190,7 @@ require_once("scripts/devdocs.php");</string>
 			<key>uid</key>
 			<string>doc</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -226,14 +198,10 @@ require_once("scripts/devdocs.php");</string>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
-				<integer>118</integer>
+				<integer>126</integer>
 				<key>script</key>
 				<string>$query = "{query}";
 require_once("scripts/conf.php");</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
 				<key>type</key>
 				<integer>1</integer>
 			</dict>
@@ -242,13 +210,11 @@ require_once("scripts/conf.php");</string>
 			<key>uid</key>
 			<string>dotaskbasedoncommand</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -263,17 +229,9 @@ require_once("scripts/conf.php");</string>
 				<integer>0</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
 				<key>script</key>
 				<string>$query = "selectAdd {query}";
 require_once("scripts/conf.php");</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
 				<key>title</key>
 				<string>Add a doc on DevDocs workflow</string>
 				<key>type</key>
@@ -286,13 +244,11 @@ require_once("scripts/conf.php");</string>
 			<key>uid</key>
 			<string>addtask</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -307,17 +263,9 @@ require_once("scripts/conf.php");</string>
 				<integer>0</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
 				<key>script</key>
 				<string>$query = "selectRemove {query}";
 require_once("scripts/conf.php");</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
 				<key>title</key>
 				<string>Remove a doc on DevDocs workflow</string>
 				<key>type</key>
@@ -330,13 +278,11 @@ require_once("scripts/conf.php");</string>
 			<key>uid</key>
 			<string>removetask</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -351,17 +297,9 @@ require_once("scripts/conf.php");</string>
 				<integer>0</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
 				<key>script</key>
 				<string>$query = "selectRefresh {query}";
 require_once("scripts/conf.php");</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
 				<key>title</key>
 				<string>Refresh docs on DevDocs workflow</string>
 				<key>type</key>
@@ -374,13 +312,11 @@ require_once("scripts/conf.php");</string>
 			<key>uid</key>
 			<string>refreshtask</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<false/>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -395,17 +331,9 @@ require_once("scripts/conf.php");</string>
 				<integer>0</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
 				<key>script</key>
 				<string>$query = "list {query}";
 require_once("scripts/conf.php");</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
 				<key>title</key>
 				<string>List available docs on DevDocs workflow</string>
 				<key>type</key>
@@ -418,7 +346,7 @@ require_once("scripts/conf.php");</string>
 			<key>uid</key>
 			<string>listtask</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -427,8 +355,6 @@ require_once("scripts/conf.php");</string>
 				<integer>2</integer>
 				<key>keyword</key>
 				<string>cdoc:all</string>
-				<key>subtext</key>
-				<string></string>
 				<key>text</key>
 				<string>Add all available docs on DevDocs workflow</string>
 				<key>withspace</key>
@@ -439,7 +365,7 @@ require_once("scripts/conf.php");</string>
 			<key>uid</key>
 			<string>addalltaskkeyword</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -451,10 +377,6 @@ require_once("scripts/conf.php");</string>
 				<key>script</key>
 				<string>$query = "addAll";
 require_once("scripts/conf.php");</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
 				<key>type</key>
 				<integer>1</integer>
 			</dict>
@@ -463,7 +385,7 @@ require_once("scripts/conf.php");</string>
 			<key>uid</key>
 			<string>addalltask</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -472,8 +394,6 @@ require_once("scripts/conf.php");</string>
 				<integer>2</integer>
 				<key>keyword</key>
 				<string>cdoc:nuke</string>
-				<key>subtext</key>
-				<string></string>
 				<key>text</key>
 				<string>Remove all docs on your DevDocs workflow</string>
 				<key>withspace</key>
@@ -484,7 +404,7 @@ require_once("scripts/conf.php");</string>
 			<key>uid</key>
 			<string>nuketaskkeyword</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -496,10 +416,6 @@ require_once("scripts/conf.php");</string>
 				<key>script</key>
 				<string>$query = "nuke";
 require_once("scripts/conf.php");</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
 				<key>type</key>
 				<integer>1</integer>
 			</dict>
@@ -508,94 +424,131 @@ require_once("scripts/conf.php");</string>
 			<key>uid</key>
 			<string>nuketask</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>118</integer>
+				<key>keyword</key>
+				<string>react</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Searching for "{query}"</string>
+				<key>script</key>
+				<string>$query = "{query}";
+$documentation = 'react';
+require_once("scripts/devdocs.php");</string>
+				<key>subtext</key>
+				<string>Search for React "{query}"</string>
+				<key>title</key>
+				<string>DevDocs - React</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>react</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>output</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>uidata</key>
 	<dict>
 		<key>addalltask</key>
 		<dict>
-			<key>xpos</key>
-			<integer>500</integer>
 			<key>ypos</key>
 			<real>510</real>
 		</dict>
 		<key>addalltaskkeyword</key>
 		<dict>
-			<key>xpos</key>
-			<integer>300</integer>
 			<key>ypos</key>
 			<real>510</real>
 		</dict>
 		<key>addtask</key>
 		<dict>
-			<key>xpos</key>
-			<integer>300</integer>
 			<key>ypos</key>
 			<real>110</real>
 		</dict>
 		<key>doc</key>
 		<dict>
-			<key>xpos</key>
-			<integer>300</integer>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
 		<key>dotaskbasedoncommand</key>
 		<dict>
-			<key>xpos</key>
-			<integer>500</integer>
 			<key>ypos</key>
 			<real>110</real>
 		</dict>
 		<key>listtask</key>
 		<dict>
-			<key>xpos</key>
-			<integer>300</integer>
 			<key>ypos</key>
 			<real>410</real>
 		</dict>
 		<key>nuketask</key>
 		<dict>
-			<key>xpos</key>
-			<integer>500</integer>
 			<key>ypos</key>
 			<real>610</real>
 		</dict>
 		<key>nuketaskkeyword</key>
 		<dict>
-			<key>xpos</key>
-			<integer>300</integer>
 			<key>ypos</key>
 			<real>610</real>
 		</dict>
 		<key>output</key>
 		<dict>
-			<key>xpos</key>
-			<integer>500</integer>
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
 		<key>refreshtask</key>
 		<dict>
-			<key>xpos</key>
-			<integer>300</integer>
 			<key>ypos</key>
 			<real>310</real>
 		</dict>
 		<key>removetask</key>
 		<dict>
-			<key>xpos</key>
-			<integer>300</integer>
 			<key>ypos</key>
 			<real>210</real>
 		</dict>
 		<key>shownotificationwhencomplete</key>
 		<dict>
-			<key>xpos</key>
-			<integer>700</integer>
 			<key>ypos</key>
 			<real>10</real>
+		</dict>
+		<key>react</key>
+		<dict>
+			<key>ypos</key>
+			<real>730</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
