@@ -34,6 +34,8 @@ By default, all docs are present in this workflow but maybe you dont need all do
 - cdoc:addall = Add all docs available to your workflow
 - cdoc:nuke = Remove all docs in your workflow
 - cdoc:refresh = Refresh cache for a doc if specified or all if you want.
+- cdoc:alias = Create an alias for a documentation
+- cdoc:unalias = Remove an existing alias of a documentation
 
 # Install
 Use the packaged workflow [DevDocs.alfredworkflow](https://github.com/packal/repository/raw/master/com.yannickglt.alfred2.devdocs/devdocs.alfredworkflow) from packal.

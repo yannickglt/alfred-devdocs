@@ -512,4 +512,12 @@ class Workflows {
     }
   }
 
+  public function log($var) {
+    ob_start();
+    var_dump($var);
+    $output = ob_get_contents();
+    ob_end_clean();
+    error_log($output);
+  }
+
 }
