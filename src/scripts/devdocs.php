@@ -114,12 +114,20 @@ class DevDocs {
       }
     }
 
+    if ((count($this->results[0]) === 0) && (count($this->results[1]) === 0) && (count($this->results[2]) === 0)) {
+      $this->results[0][] = (object) [
+        'name' => 'No results.',
+        'documentation' => $documentation
+      ];
+    }
+
   }
 
   private function render() {
     foreach ($this->results as $level => $results) {
       foreach ($results as $result) {
-        $this->workflows->result($result->name, self::$baseUrl . $result->documentation . '/' . $result->path, $result->name . ' (' . $result->type . ')', $result->path, $result->documentation . '.png', 'yes', $result->name);
+        $title = empty($result->type) ? $result->name : "$result->name ($result->type)";
+        $this->workflows->result($result->name, self::$baseUrl . $result->documentation . '/' . $result->path, $title, $result->path, $result->documentation . '.png', 'yes', $result->name);
       }
     }
     echo $this->workflows->toxml();
