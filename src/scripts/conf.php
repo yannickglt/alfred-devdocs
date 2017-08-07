@@ -89,20 +89,22 @@ class DevDocsConf {
   private function setDocumentations() {
     $docFile = self::$cacheDirectory . 'docs.json';
     // Keep the docs in cache during 7 days
-    if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7)) {
+    if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7) || is_null(@json_decode(file_get_contents($docFile)))) {
       file_put_contents($docFile, $this->workflows->fetch('http://devdocs.io/docs/docs.json'));
     }
-    $docs = json_decode(file_get_contents($docFile));
+    $docs = @json_decode(file_get_contents($docFile));
     $this->documentations = [];
-    foreach ($docs as $doc) {
-      $doc->fullName = $doc->name . (!empty($doc->version) ? ' ' . $doc->version : '');
-      $this->documentations[$doc->slug] = $doc;
+    if (is_array($docs)) {
+      foreach ($docs as $doc) {
+        $doc->fullName = $doc->name . (!empty($doc->version) ? ' ' . $doc->version : '');
+        $this->documentations[$doc->slug] = $doc;
+      }
     }
   }
 
   private function loadAliases() {
     $aliasesFile = $this->workflows->data() . '/aliases.json';
-    $this->aliases = json_decode(file_get_contents($aliasesFile), true);
+    $this->aliases = @json_decode(file_get_contents($aliasesFile), true);
     if (!is_array($this->aliases)) {
       $this->aliases = [];
       $this->saveAliases();
@@ -116,7 +118,7 @@ class DevDocsConf {
 
   private function loadDocs() {
     $docsFile = $this->workflows->data() . '/docs.json';
-    $this->currentConfig = json_decode(file_get_contents($docsFile), true);
+    $this->currentConfig = @json_decode(file_get_contents($docsFile), true);
     if (!is_array($this->currentConfig)) {
       $this->currentConfig = [];
       $this->saveDocs();
