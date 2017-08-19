@@ -51,6 +51,7 @@ class DevDocsConf {
   private function openPlist() {
     $this->pList = new CFPropertyList($this->rootPath . '/info.plist');
     $this->pList = $this->pList->toArray();
+    $this->regeneratePlist();
   }
 
   private function parseCommand($rawQuery) {
