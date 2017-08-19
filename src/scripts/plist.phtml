@@ -715,6 +715,13 @@
 <?php endforeach; ?>
 <?php endforeach; ?>
     </dict>
+    <key>variables</key>
+    <dict>
+<?php foreach ($variables as $key => $value): ?>
+      <key><?= $key ?></key>
+      <string><?= $value ?></string>
+<?php endforeach; ?>
+    </dict>
     <key>webaddress</key>
     <string>https://github.com/yannickglt/alfred-devdocs</string>
   </dict>

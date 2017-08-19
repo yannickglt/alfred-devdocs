@@ -76,14 +76,14 @@ class DevDocsConf {
   }
 
   private function regeneratePlist() {
-    $buildPlist = function ($rootPath, $documentations, $aliases) { // $documentations are used in the template
+    $buildPlist = function ($rootPath, $documentations, $aliases, $variables) { // $documentations are used in the template
       ob_start();
       include $rootPath . '/scripts/plist.phtml';
       $fileContent = ob_get_contents();
       ob_end_clean();
       file_put_contents($rootPath . '/info.plist', $fileContent);
     };
-    $buildPlist($this->rootPath, $this->currentConfig, $this->aliases);
+    $buildPlist($this->rootPath, $this->currentConfig, $this->aliases, $this->pList['variables']);
   }
 
   private function setDocumentations() {
