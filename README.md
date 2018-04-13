@@ -3,6 +3,9 @@ alfred-devdocs
 
 Alfred workflow for the amazing [devdocs.io](http://devdocs.io/) documentations. 
 
+# Install
+Use the packaged workflow [DevDocs.alfredworkflow](https://github.com/packal/repository/raw/master/com.yannickglt.alfred2.devdocs/devdocs.alfredworkflow) from packal.
+
 # How to
 ## Find in a specific documentation
 Keywords exist for each documentation supported by DevDocs.
@@ -36,9 +39,6 @@ By default, all docs are present in this workflow but maybe you dont need all do
 - cdoc:refresh = Refresh cache for a doc if specified or all if you want.
 - cdoc:alias = Create an alias for a documentation
 - cdoc:unalias = Remove an existing alias of a documentation
-
-# Install
-Use the packaged workflow [DevDocs.alfredworkflow](https://github.com/packal/repository/raw/master/com.yannickglt.alfred2.devdocs/devdocs.alfredworkflow) from packal.
 
 ## Use behind an HTTP proxy
 Define the `HTTP_PROXY` environment variable in Alfred as below. You can define the `HTTP_PROXY_AUTHORIZATION` as well if your proxy needs basic authentication.
