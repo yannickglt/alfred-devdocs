@@ -9,8 +9,8 @@ require_once 'workflows.php';
 
 class DevDocs {
 
-  private static $baseUrl = 'http://devdocs.io/';
-  private static $docUrl = 'http://maxcdn-docs.devdocs.io/';
+  private static $baseUrl = 'https://devdocs.io/';
+  private static $docUrl = 'https://docs.devdocs.io/';
   private static $cacheDirectory = 'cache/';
 
   private $workflows;
@@ -49,7 +49,7 @@ class DevDocs {
     $docFile = self::$cacheDirectory . 'docs.json';
     // Keep the docs in cache during 7 days
     if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7)) {
-      $docContent = $this->workflows->fetch('http://devdocs.io/docs/docs.json');
+      $docContent = $this->workflows->fetch(self::$baseUrl . 'docs/docs.json');
       file_put_contents($docFile, $docContent);
     } else {
       $docContent = file_get_contents($docFile);

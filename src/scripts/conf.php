@@ -16,6 +16,8 @@ require_once 'workflows.php';
 
 class DevDocsConf {
 
+  private static $baseUrl = 'https://devdocs.io/';
+  private static $docUrl = 'https://docs.devdocs.io/';
   private static $cacheDirectory = 'cache/';
 
   private $commands = ['add' => 1, 'remove' => 1, 'refresh' => 1, 'list' => 1, 'alias' => 1, 'unalias' => 1, 'select' => 0, 'addAll' => 0, 'nuke' => 0];
@@ -91,7 +93,7 @@ class DevDocsConf {
     $docFile = self::$cacheDirectory . 'docs.json';
     // Keep the docs in cache during 7 days
     if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7) || is_null(@json_decode(file_get_contents($docFile)))) {
-      file_put_contents($docFile, $this->workflows->fetch('http://devdocs.io/docs/docs.json'));
+      file_put_contents($docFile, $this->workflows->fetch(self::$baseUrl . 'docs/docs.json'));
     }
     $docs = @json_decode(file_get_contents($docFile));
     $this->documentations = [];
@@ -264,7 +266,7 @@ class DevDocsConf {
     foreach ($docToUpdate as $doc) {
       file_put_contents(
         self::$cacheDirectory . $doc->slug . '.json',
-        $this->workflows->fetch('http://docs.devdocs.io/' . $doc->slug . '/index.json')
+        $this->workflows->fetch(self::$docUrl . $doc->slug . '/index.json')
       );
     }
     echo (($updateAll) ? 'All data docs' : $this->currentCmd[1] . ' doc') . ' updated!';
