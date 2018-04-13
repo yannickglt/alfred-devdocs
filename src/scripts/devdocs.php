@@ -1,5 +1,6 @@
 <?php
 
+ini_set('display_errors', 0);
 ini_set('memory_limit', '-1');
 
 use CFPropertyList\CFPropertyList;

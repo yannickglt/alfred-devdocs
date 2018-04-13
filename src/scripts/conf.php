@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  Configure Alfred DevDocs Workflow
  *  Availables Commands :
@@ -11,6 +12,9 @@
  */
 
 namespace CFPropertyList;
+
+ini_set('display_errors', 0);
+
 require_once 'vendor/autoload.php';
 require_once 'workflows.php';
 
