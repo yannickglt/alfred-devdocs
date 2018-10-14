@@ -4,3 +4,4 @@ src/docs/*
 src/.DS_Store
 .idea
 docs.json
+.vscode
