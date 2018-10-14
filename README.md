@@ -6,6 +6,13 @@ Alfred workflow for the amazing [devdocs.io](http://devdocs.io/) documentations.
 # Install
 Use the packaged workflow [DevDocs.alfredworkflow](https://github.com/packal/repository/raw/master/com.yannickglt.alfred2.devdocs/devdocs.alfredworkflow) from packal.
 
+## Add docs
+Now add some documentations to your workflow like this:
+
+```
+docs:add javascript
+```
+
 # How to
 
 ## Add a documentation
