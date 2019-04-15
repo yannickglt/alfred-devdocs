@@ -79,7 +79,7 @@ class DevDocs {
 
     $query = strtolower($query);
     $data = json_decode(file_get_contents(self::$cacheDirectory . $documentation . '.json'));
-    if ($data === NULL) {
+    if ($data === null) {
       unlink(self::$cacheDirectory . $documentation . '.json');
     }
 
