@@ -1,4 +1,4 @@
-alfred-devdocs
+alfred-devdocs [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/yannickgalatol)
 ==============
 
 Alfred workflow for the amazing [devdocs.io](http://devdocs.io/) documentations.
