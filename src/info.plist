@@ -834,11 +834,11 @@
     <key>variables</key>
     <dict>
       <key>BASE_URL</key>
-      <string>devdocs://search/</string>
+      <string></string>
       <key>CACHE_LIFE</key>
-      <string>-1</string>
+      <string></string>
       <key>TEMPLATE</key>
-      <string>$baseUrl$docalt%20$name</string>
+      <string></string>
     </dict>
     <key>version</key>
     <string></string>
