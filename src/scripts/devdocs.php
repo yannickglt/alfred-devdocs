@@ -9,15 +9,19 @@ require_once 'vendor/autoload.php';
 require_once 'workflows.php';
 
 class DevDocs {
-
-  private static $baseUrl = 'https://devdocs.io/';
   private static $docUrl = 'https://docs.devdocs.io/';
   private static $cacheDirectory = 'cache/';
 
   private $workflows;
   private $results;
+  private $baseUrl;
+  private $cacheLife;
+  private $template;
 
   public function __construct($query, $doc) {
+    $this->baseUrl = getenv('BASE_URL') ?: 'https://devdocs.io/';
+    $this->cacheLife = (int)(getenv('CACHE_LIFE') ?: '7');
+    $this->template = getenv('TEMPLATE') ?: '$baseUrl$documentation/$path';
     $this->workflows = new Workflows();
     $cache = $this->workflows->cache();
     if ($cache !== false) {
@@ -48,8 +52,8 @@ class DevDocs {
 
   private function getDocumentations() {
     $docFile = self::$cacheDirectory . 'docs.json';
-    // Keep the docs in cache during 7 days
-    if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7)) {
+    // Keep the docs in cache before expired
+    if (!file_exists($docFile) || ($this->cacheLife >= 0 && filemtime($docFile) <= time() - 86400 * $this->cacheLife)) {
       $docContent = $this->workflows->fetch(self::$baseUrl . 'docs/docs.json');
       file_put_contents($docFile, $docContent);
     } else {
@@ -69,8 +73,8 @@ class DevDocs {
       mkdir(self::$cacheDirectory);
     }
     $docFile = self::$cacheDirectory . $documentation . '.json';
-    // Keep the docs in cache during 7 days
-    if (!file_exists($docFile) || (filemtime($docFile) <= time() - 86400 * 7)) {
+    // Keep the docs in cache before expired
+    if (!file_exists($docFile) || ($this->cacheLife >= 0 && filemtime($docFile) <= time() - 86400 * $this->cacheLife)) {
       file_put_contents($docFile, file_get_contents(self::$docUrl . $documentation . '/index.json'));
     }
   }
@@ -128,7 +132,16 @@ class DevDocs {
     foreach ($this->results as $level => $results) {
       foreach ($results as $result) {
         $title = empty($result->type) ? $result->name : "$result->name ($result->type)";
-        $this->workflows->result($result->name, self::$baseUrl . $result->documentation . '/' . $result->path, $title, $result->path, $result->documentation . '.png', 'yes', $result->name);
+        $vars = Array(
+          '$baseUrl' => $this->baseUrl,
+          '$documentation' => $result->documentation,
+          '$docalt' => str_replace("~", "-", $result->documentation),
+          '$name' => $result->name,
+          '$path' => $result->path
+        );
+        //$url = $this->baseUrl . $result->documentation . '/' . $result->path;
+        $url = strtr($this->template, $vars);
+        $this->workflows->result($result->name, $url, $title, $result->path, $result->documentation . '.png', 'yes', $result->name);
       }
     }
     echo $this->workflows->toxml();
