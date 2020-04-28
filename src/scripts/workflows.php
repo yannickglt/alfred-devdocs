@@ -171,7 +171,7 @@ class Workflows {
   public function toxml($a = null, $format = 'array') {
 
     if ($format == 'json'):
-      $a = json_decode($a, TRUE);
+      $a = json_decode($a, true);
     endif;
 
     if (is_null($a) && !empty($this->results)):
