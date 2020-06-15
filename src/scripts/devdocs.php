@@ -9,7 +9,7 @@ require_once 'vendor/autoload.php';
 require_once 'workflows.php';
 
 class DevDocs {
-  private static $docUrl = 'https://docs.devdocs.io/';
+  private static $docUrl = 'http://docs.devdocs.io/';
   private static $cacheDirectory = 'cache/';
 
   private $workflows;
@@ -73,8 +73,10 @@ class DevDocs {
       mkdir(self::$cacheDirectory);
     }
     $docFile = self::$cacheDirectory . $documentation . '.json';
+    error_log("Checking existence of cache at $docFile");
     // Keep the docs in cache before expired
     if (!file_exists($docFile) || ($this->cacheLife >= 0 && filemtime($docFile) <= time() - 86400 * $this->cacheLife)) {
+      error_log("Download doc for $documentation at \"" . self::$docUrl . $documentation . '/index.json') . "\"";
       file_put_contents($docFile, file_get_contents(self::$docUrl . $documentation . '/index.json'));
     }
   }
@@ -132,7 +134,7 @@ class DevDocs {
     foreach ($this->results as $level => $results) {
       foreach ($results as $result) {
         $title = empty($result->type) ? $result->name : "$result->name ($result->type)";
-        $vars = Array(
+        $vars = array(
           '$baseUrl' => $this->baseUrl,
           '$documentation' => $result->documentation,
           '$docalt' => str_replace("~", "-", $result->documentation),
