@@ -21,7 +21,6 @@ require_once 'workflows.php';
 class DevDocsConf {
 
   private static $baseUrl = 'https://devdocs.io/';
-  private static $docUrl = 'https://docs.devdocs.io/';
   private static $cacheDirectory = 'cache/';
 
   private $commands = ['add' => 1, 'remove' => 1, 'refresh' => 1, 'list' => 1, 'alias' => 1, 'unalias' => 1, 'select' => 0, 'addAll' => 0, 'nuke' => 0];
@@ -270,7 +269,7 @@ class DevDocsConf {
     foreach ($docToUpdate as $doc) {
       file_put_contents(
         self::$cacheDirectory . $doc->slug . '.json',
-        $this->workflows->fetch(self::$docUrl . $doc->slug . '/index.json')
+        $this->workflows->fetch(self::$baseUrl . 'docs/' . $doc->slug . '/index.json')
       );
     }
     echo (($updateAll) ? 'All data docs' : $this->currentCmd[1] . ' doc') . ' updated!';

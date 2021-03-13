@@ -9,7 +9,6 @@ require_once 'vendor/autoload.php';
 require_once 'workflows.php';
 
 class DevDocs {
-  private static $docUrl = 'http://docs.devdocs.io/';
   private static $cacheDirectory = 'cache/';
 
   private $workflows;
@@ -76,8 +75,8 @@ class DevDocs {
     error_log("Checking existence of cache at $docFile");
     // Keep the docs in cache before expired
     if (!file_exists($docFile) || ($this->cacheLife >= 0 && filemtime($docFile) <= time() - 86400 * $this->cacheLife)) {
-      error_log("Download doc for $documentation at \"" . self::$docUrl . $documentation . '/index.json') . "\"";
-      file_put_contents($docFile, file_get_contents(self::$docUrl . $documentation . '/index.json'));
+      error_log("Download doc for $documentation at \"" . self::$baseUrl . 'docs/' . $documentation . '/index.json') . "\"";
+      file_put_contents($docFile, file_get_contents(self::$baseUrl . 'docs/' . $documentation . '/index.json'));
     }
   }
 
