@@ -53,7 +53,7 @@ class DevDocs {
     $docFile = self::$cacheDirectory . 'docs.json';
     // Keep the docs in cache before expired
     if (!file_exists($docFile) || ($this->cacheLife >= 0 && filemtime($docFile) <= time() - 86400 * $this->cacheLife)) {
-      $docContent = $this->workflows->fetch(self::$baseUrl . 'docs/docs.json');
+      $docContent = $this->workflows->fetch($this->baseUrl . 'docs/docs.json');
       file_put_contents($docFile, $docContent);
     } else {
       $docContent = file_get_contents($docFile);
@@ -75,8 +75,8 @@ class DevDocs {
     error_log("Checking existence of cache at $docFile");
     // Keep the docs in cache before expired
     if (!file_exists($docFile) || ($this->cacheLife >= 0 && filemtime($docFile) <= time() - 86400 * $this->cacheLife)) {
-      error_log("Download doc for $documentation at \"" . self::$baseUrl . 'docs/' . $documentation . '/index.json') . "\"";
-      file_put_contents($docFile, file_get_contents(self::$baseUrl . 'docs/' . $documentation . '/index.json'));
+      error_log("Download doc for $documentation at \"" . $this->baseUrl . 'docs/' . $documentation . '/index.json') . "\"";
+      file_put_contents($docFile, file_get_contents($this->baseUrl . 'docs/' . $documentation . '/index.json'));
     }
   }
 
